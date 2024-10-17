@@ -1,5 +1,5 @@
-using Microsoft.EntityFrameworkCore;
 using FitQuest.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace FitQuest.Data
 {
@@ -11,5 +11,8 @@ namespace FitQuest.Data
         }
 
         public DbSet<User> Users { get; set; }
+
+        // No need for Fluent API in this case
+        // We will create a unique constraint in the migration
     }
 }

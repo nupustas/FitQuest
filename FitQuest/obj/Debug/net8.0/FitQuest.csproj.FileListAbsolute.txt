@@ -106,3 +106,4 @@ C:\Users\vejas\OneDrive\Desktop\FitQuest\FitQuest\obj\Debug\net8.0\refint\FitQue
 C:\Users\vejas\OneDrive\Desktop\FitQuest\FitQuest\obj\Debug\net8.0\FitQuest.pdb
 C:\Users\vejas\OneDrive\Desktop\FitQuest\FitQuest\obj\Debug\net8.0\FitQuest.genruntimeconfig.cache
 C:\Users\vejas\OneDrive\Desktop\FitQuest\FitQuest\obj\Debug\net8.0\ref\FitQuest.dll
+C:\Users\vejas\OneDrive\Desktop\FitQuest\FitQuest\obj\Debug\net8.0\FitQuest.sourcelink.json

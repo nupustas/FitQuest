@@ -7,6 +7,15 @@
 <body>
     <div class="form-container">
         <h1>Register</h1>
+
+        <!-- Show error messages if any -->
+        @if (ViewBag.Error != null)
+        {
+            <div style="color: red; text-align: center;">
+                <p>@ViewBag.Error</p>
+            </div>
+        }
+
         <form method="post" action="/Auth/Register">
             <div class="form-group">
                 <label>Username:</label>
