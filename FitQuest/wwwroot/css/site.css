@@ -1,0 +1,110 @@
+.container {
+    text-align: center;
+    margin-top: 20%;
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+div {
+    margin-bottom: 10px;
+}
+/* General reset and layout */
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+}
+
+/* Index page container styling */
+.index-container {
+    text-align: center;
+    margin-top: 20%;
+}
+
+/* Buttons styling for index page */
+.index-container a.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 4px;
+}
+
+.index-container a.btn:hover {
+    background-color: #45a049;
+}
+
+/* Center the form container vertically and horizontally for register and login */
+.form-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Form styling */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc
+    border-radius: 4px;
+}
+
+/* Button styling for register and login forms */
+button.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button.btn:hover {
+    background-color: #45a049;
+}
