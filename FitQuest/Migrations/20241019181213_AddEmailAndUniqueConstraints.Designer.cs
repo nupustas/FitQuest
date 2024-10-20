@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FitQuest.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241017194226_AddUniqueConstraintToUsername")]
-    partial class AddUniqueConstraintToUsername
+    [Migration("20241019181213_AddEmailAndUniqueConstraints")]
+    partial class AddEmailAndUniqueConstraints
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,15 +32,25 @@ namespace FitQuest.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Username")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("varchar(255)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Email")
+                        .IsUnique();
+
+                    b.HasIndex("Username")
+                        .IsUnique();
 
                     b.ToTable("Users");
                 });

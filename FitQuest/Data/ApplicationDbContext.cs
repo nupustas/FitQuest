@@ -12,7 +12,19 @@ namespace FitQuest.Data
 
         public DbSet<User> Users { get; set; }
 
-        // No need for Fluent API in this case
-        // We will create a unique constraint in the migration
+         protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            // Apply unique constraints to Username and Email
+            modelBuilder.Entity<User>()
+                .HasIndex(u => u.Username)
+                .IsUnique();
+
+            modelBuilder.Entity<User>()
+                .HasIndex(u => u.Email)
+                .IsUnique();
+        }
+
     }
 }

@@ -1,3 +1,20 @@
 {
-    "dotnet.defaultSolution": "FitQuest.sln"
+    "dotnet.defaultSolution": "FitQuest.sln",
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "aa",
+            "group": "aa",
+            "database": "FitQuest",
+            "username": "root",
+            "password": "vejas123"
+        }
+    ]
 }

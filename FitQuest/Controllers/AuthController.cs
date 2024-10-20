@@ -16,7 +16,7 @@ namespace FitQuest.Controllers
         }
 
         [HttpPost]
-        public IActionResult Register(string username, string password, string confirmPassword)
+        public IActionResult Register(string username, string email, string password, string confirmPassword)
         {
             // Check if passwords match
             if (password != confirmPassword)
@@ -25,40 +25,54 @@ namespace FitQuest.Controllers
                 return View("../Home/Register");
             }
 
-            // Check if the username already exists
+            // Check if the username or email already exists
             var existingUser = _context.Users.FirstOrDefault(u => u.Username == username);
+            var existingEmail = _context.Users.FirstOrDefault(u => u.Email == email);
+            
             if (existingUser != null)
             {
-                ViewBag.Error = "Username is taken, please choose a different one";
+                ViewBag.Error = "Username is taken";
+                return View("../Home/Register");
+            }
+
+            if (existingEmail != null)
+            {
+                ViewBag.Error = "Email is already registered";
                 return View("../Home/Register");
             }
 
             // Add the new user
-            var user = new User { Username = username, Password = password };
+            var user = new User { Username = username, Email = email, Password = password };
             _context.Users.Add(user);
 
             try
             {
                 _context.SaveChanges();  // Save to the database
+           
+                HttpContext.Session.SetString("Username", user.Username); // Set the username in the session
             }
-            catch (DbUpdateException ex)
+            catch (DbUpdateException)
             {
-                // Handle any database exceptions (e.g., unique constraint violation)
                 ViewBag.Error = "An error occurred while saving the user. Please try again later.";
                 return View("../Home/Register");
             }
 
-            return RedirectToAction("Login", "Home");
+            return RedirectToAction("Main", "Home");
         }
 
         [HttpPost]
-        public IActionResult Login(string username, string password)
+        public IActionResult Login(string usernameOrEmail, string password)
         {
-            // Find the user by username and password
-            var user = _context.Users.FirstOrDefault(u => u.Username == username && u.Password == password);
+
+            
+            // Find the user by username or email and password
+            var user = _context.Users.FirstOrDefault(u => 
+                (u.Username == usernameOrEmail || u.Email == usernameOrEmail) 
+                && u.Password == password);
 
             if (user != null)
             {
+                HttpContext.Session.SetString("Username", user.Username);
                 return RedirectToAction("Main", "Home");
             }
 
