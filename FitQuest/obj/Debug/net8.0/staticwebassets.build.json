@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "l+kHWWmIm2/2XEDb08+3AGxeqF48oHAQ4l/wMtL4UlQ=",
+  "Hash": "zbPXhwx22dNiIQRksUG9tsDY/4FIs5exNaVHrRLusHw=",
   "Source": "FitQuest",
   "BasePath": "_content/FitQuest",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "FitQuest\\wwwroot",
       "Source": "FitQuest",
-      "ContentRoot": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\FitQuest\\FitQuest\\wwwroot\\",
       "BasePath": "_content/FitQuest",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\FitQuest\\FitQuest\\wwwroot\\css\\site.css",
       "SourceId": "FitQuest",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\FitQuest\\FitQuest\\wwwroot\\",
       "BasePath": "_content/FitQuest",
       "RelativePath": "css/site.css",
       "AssetKind": "All",

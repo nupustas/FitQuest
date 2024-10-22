@@ -3,6 +3,7 @@ using FitQuest.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using BCrypt.Net; // Add BCrypt.Net for hashing
 
 namespace FitQuest.Controllers
 {
@@ -41,8 +42,11 @@ namespace FitQuest.Controllers
                 return View("../Home/Register");
             }
 
-            // Add the new user
-            var user = new User { Username = username, Email = email, Password = password };
+            // Hash the password using BCrypt
+            var hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
+
+            // Add the new user with the hashed password
+            var user = new User { Username = username, Email = email, Password = hashedPassword };
             _context.Users.Add(user);
 
             try
@@ -63,17 +67,20 @@ namespace FitQuest.Controllers
         [HttpPost]
         public IActionResult Login(string usernameOrEmail, string password)
         {
-
-            
-            // Find the user by username or email and password
+            // Find the user by username or email
             var user = _context.Users.FirstOrDefault(u => 
-                (u.Username == usernameOrEmail || u.Email == usernameOrEmail) 
-                && u.Password == password);
+                u.Username == usernameOrEmail || u.Email == usernameOrEmail);
 
             if (user != null)
             {
-                HttpContext.Session.SetString("Username", user.Username);
-                return RedirectToAction("Main", "Home");
+                // Verify the password using BCrypt
+                bool isPasswordValid = BCrypt.Net.BCrypt.Verify(password, user.Password);
+                
+                if (isPasswordValid)
+                {
+                    HttpContext.Session.SetString("Username", user.Username);
+                    return RedirectToAction("Main", "Home");
+                }
             }
 
             ViewBag.Error = "Invalid login credentials";
