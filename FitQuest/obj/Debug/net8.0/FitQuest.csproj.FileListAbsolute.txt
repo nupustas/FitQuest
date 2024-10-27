@@ -216,3 +216,4 @@ C:\Users\petru\Desktop\VU\Komparkas\FitQuest\FitQuest\obj\Debug\net8.0\FitQuest.
 C:\Users\petru\Desktop\VU\Komparkas\FitQuest\FitQuest\obj\Debug\net8.0\FitQuest.genruntimeconfig.cache
 C:\Users\petru\Desktop\VU\Komparkas\FitQuest\FitQuest\obj\Debug\net8.0\ref\FitQuest.dll
 C:\Users\petru\Desktop\VU\Komparkas\FitQuest\FitQuest\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Users\vejas\OneDrive\Desktop\FitQuest\FitQuest\bin\Debug\net8.0\BCrypt.Net-Next.dll

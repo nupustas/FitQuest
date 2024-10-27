@@ -19,6 +19,25 @@ namespace FitQuest.Controllers
             return View();
         }
 
+         public IActionResult Fitness()
+        {
+            return View();
+        }
+
+        public IActionResult Nutrition()
+        {
+            return View();
+        }
+
+         public IActionResult Progress()
+        {
+            return View();
+        }
+        
+        public IActionResult Recipes()
+        {
+            return View();
+        }
         public IActionResult Main()
         {
              var username = HttpContext.Session.GetString("Username");

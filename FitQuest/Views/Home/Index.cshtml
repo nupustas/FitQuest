@@ -1,15 +1,87 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>FitQuest</title>
-    <link rel="stylesheet" href="~/css/site.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="~/css/maindesign.css" />
+    <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@@fortawesome/fontawesome-free@6.6.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1>FitQuest</h1>
+    <section class="header"> 
+        <nav>
+            <a href="/home/index"> <img src="~/images/words_logo.png"> </a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()" ></i>
+                <ul>
+                    <li><a href="/home/Index">HOME</a></li>
+                    <li><a href="/home/Fitness">FITNESS</a></li>
+                    <li><a href="/home/Nutrition">NUTRITION</a></li>
+                    <li><a href="/home/Progress">PROGRESS</a></li>
+                    <li><a href="/home/Recipes">RECIPES</a></li>
+                    <li><a href="/home/Login">SIGN UP/SIGN IN</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <div class="text-box" >
+            <h1>Motivational quote</h1>
+        <p>Transform Your Journey: Track, Train, Thrive!</p>
+        <a href="home/progress" class="hero-btn">Track your progress</a>
+        </div>
+    </section>
     
-        <a href="/Home/Register" class="btn">Register</a>
-        <a href="/Home/Login" class="btn">Login</a>
+  <section class="blog-posts">
+    <h1>RECENT POSTS</h1>
+    <div class="row">
+        <div class="blog-col-1">
+            <h3>Unlock your nutritional goals with FIT QUEST</h3>
+            <p>Are you looking to take control of your fitness and nutritional goals? 
+                Look no further that FIT QUEST!
+            </p>
+        </div>
+        <div class="blog-col-2">
+            <h3>Maximise your fitness potential with FIT QUEST</h3>
+            <p>Are you ready to embark on a fitness journey to reach your goals and maximise your potential? </p>
+        </div>
+        <div class="blog-col-3">
+            <h3>Join the FIT QUEST fitness community for Fitness success</h3>
+            <p>Are you looking for a supportive community to help you achieve your fitness and nutrition goals?</p>
+        </div>
     </div>
+
+  </section>
+
+  <section class="about-us">
+    <div class="row-about">
+        <div class="about-col-1">
+            <h1>ABOUT US</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vestibulum faucibus vulputate. Quisque volutpat nulla tristique elit congue euismod. Donec ac urna in erat iaculis aliquet. Maecenas viverra tellus ac enim mattis pharetra. Vivamus vel leo vel nunc tincidunt pretium. Nam ultricies vehicula urna, lobortis eleifend velit aliquam consectetur. Suspendisse vel consectetur leo. Nam velit magna, eleifend sit amet faucibus vel, venenatis eu felis.</p>
+
+        </div>
+        <div class="about-col-2">
+        <img src="~/images/team.jpg">
+        </div>
+    </div>
+  </section>
+
+
+
+
+
+
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+    </script>
 </body>
 </html>
