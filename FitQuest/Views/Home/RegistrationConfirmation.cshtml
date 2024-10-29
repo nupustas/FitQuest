@@ -1,0 +1,32 @@
+@{
+    ViewData["Title"] = "Registration Confirmation";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Registration Successful</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>Thank you for registering. Please check your email to confirm your account.</p>
+                        <p>If you do not receive the email within a few minutes, please check your spam folder or <a href="@Url.Action("ResendConfirmation", "Account")">click here</a> to resend the confirmation email.</p>
+                        <!-- Add a button to redirect to the login page -->
+                        <a href="@Url.Action("Login", "Account")" class="btn btn-primary mt-3">Go to Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
