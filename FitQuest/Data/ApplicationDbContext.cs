@@ -12,19 +12,21 @@ namespace FitQuest.Data
 
         public DbSet<User> Users { get; set; }
 
-         protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            // Apply unique constraints to Username and Email
-            modelBuilder.Entity<User>()
-                .HasIndex(u => u.Username)
-                .IsUnique();
-
-            modelBuilder.Entity<User>()
-                .HasIndex(u => u.Email)
-                .IsUnique();
+            // Map the custom User properties to your existing table structure
+            modelBuilder.Entity<User>(entity =>
+            {
+                entity.ToTable("Users");
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Id).HasColumnName("Id");
+                entity.Property(e => e.Username).HasColumnName("Username");
+                entity.Property(e => e.Password).HasColumnName("Password");
+                entity.Property(e => e.Email).HasColumnName("Email");
+                entity.Property(e => e.EmailConfirmed).HasColumnName("EmailConfirmed");
+            });
         }
-
     }
 }

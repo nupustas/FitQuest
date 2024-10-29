@@ -12,8 +12,16 @@
 	<div class="main">  	
 		<input type="checkbox" id="chk" aria-hidden="true">
 
+		<!-- Display error message if login failed -->
+        @if (ViewBag.Error != null)
+        {
+            <div class="error-message">
+                <p>@ViewBag.Error</p>
+            </div>
+        }
+
 			<div class="signup">
-				<form method="post" action="/Auth/Register">
+				<form method="post" action="/Account/Register">
 					<label for="chk" aria-hidden="true">Sign up</label>
 
 					<input type="text" name="username" placeholder="Username" required="">
@@ -25,9 +33,8 @@
 			</div>
 
 			<div class="login">
-				<form method="post" action="/Auth/Login">
+				<form method="post" action="/Account/Login">
 					<label for="chk" aria-hidden="true">Login</label>
-
 					<input type="text" name="usernameOrEmail" placeholder="Username or email" required="">
 					<input type="password" name="password" placeholder="Password" required="">
 					<button type="submit" >Login</button>

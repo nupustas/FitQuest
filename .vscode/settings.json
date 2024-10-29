@@ -7,14 +7,13 @@
                 "enableSsl": "Disabled"
             },
             "previewLimit": 50,
-            "server": "localhost",
+            "server": "34.89.223.194",
             "port": 3306,
             "driver": "MySQL",
-            "name": "aa",
-            "group": "aa",
-            "database": "FitQuest",
-            "username": "root",
-            "password": "vejas123"
+            "name": "test",
+            "database": "fitquest",
+            "username": "andriuha",
+            "password": "Sportininkas1!"
         }
     ]
 }
