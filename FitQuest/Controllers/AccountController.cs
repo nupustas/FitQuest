@@ -91,6 +91,7 @@ namespace FitQuest.Controllers
             if (user != null && BCrypt.Net.BCrypt.Verify(password, user.Password))
             {
                 HttpContext.Session.SetString("Username", user.Username);
+                
                 if (!user.EmailConfirmed)
                 {
                     ViewBag.Error = "Please confirm your email before logging in.";
@@ -107,7 +108,7 @@ namespace FitQuest.Controllers
                 }
                 else
                 {
-                    return RedirectToAction("Main", "Home");
+                    return RedirectToAction("Index", "Home");
                 }
             }
 
@@ -119,7 +120,7 @@ namespace FitQuest.Controllers
         public IActionResult Logout()
         {
             // Sign out the user
-            HttpContext.Session.Remove("UserId");
+            HttpContext.Session.Clear(); // Clear all session data
             return RedirectToAction("Index", "Home");
         }
 
