@@ -30,12 +30,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vejas/OneDrive/Desktop/FitQuest/FitQuest/Views/Home/Main.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNYWluLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/vejas/OneDrive/Desktop/FitQuest/FitQuest/Views/Home/nutrition.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxudXRyaXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vejas/OneDrive/Desktop/FitQuest/FitQuest/Views/Home/profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxwcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/vejas/OneDrive/Desktop/FitQuest/FitQuest/Views/Home/progress.cshtml]
