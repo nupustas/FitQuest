@@ -1,5 +1,6 @@
 using System.Net.Http;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
 
 namespace FitQuest.Services
@@ -12,11 +13,12 @@ namespace FitQuest.Services
     public class DietPlanService : IDietPlanService
     {
         private readonly HttpClient _httpClient;
-        private readonly string _apiKey = "14629cbc86de4b4694d7f3c826b9d5a4"; // Replace with your Spoonacular API key
+        private readonly string _apiKey;
 
-        public DietPlanService(HttpClient httpClient)
+        public DietPlanService(HttpClient httpClient, IConfiguration configuration)
         {
             _httpClient = httpClient;
+            _apiKey = configuration["Spoonacular:ApiKey"];
         }
 
         public async Task<string> GenerateDietPlanAsync(int age, string gender, double weight, double height, string exerciseGoal, int exerciseFrequency)
@@ -42,8 +44,12 @@ namespace FitQuest.Services
             {
                 adjustedCalories += 500;
             }
+            int adjustedCaloriesInt = (int)adjustedCalories;
 
-            var response = await _httpClient.GetAsync($"https://api.spoonacular.com/mealplanner/generate?apiKey={_apiKey}&targetCalories={adjustedCalories}");
+            // Create the request URL with the diet parameter set to high-protein
+            var requestUrl = $"https://api.spoonacular.com/mealplanner/generate?apiKey={_apiKey}&targetCalories={adjustedCaloriesInt}&diet=high-protein";
+
+            var response = await _httpClient.GetAsync(requestUrl);
             response.EnsureSuccessStatusCode(); // This will throw an exception if the status code is not 2xx
 
             var responseString = await response.Content.ReadAsStringAsync();
@@ -54,63 +60,63 @@ namespace FitQuest.Services
             return formattedResponse;
         }
 
-    private string FormatDietPlan(JObject json)
-{
-    var result = new System.Text.StringBuilder();
-
-    result.AppendLine("<div class='diet-plan'>");
-
-    if (json["week"] != null)
-    {
-        foreach (var day in json["week"])
+        private string FormatDietPlan(JObject json)
         {
-            result.AppendLine($"<h2>{day.Path}</h2>");
+            var result = new System.Text.StringBuilder();
 
-            var dayMeals = day.First["meals"];
-            if (dayMeals != null)
-            {
-                foreach (var meal in dayMeals)
-                {
-                    result.AppendLine("<div class='meal'>");
-                    result.AppendLine($"<h3>{meal["title"]}</h3>");
-                    result.AppendLine($"<p>Ready in {meal["readyInMinutes"]} minutes</p>");
-                    result.AppendLine($"<p>Servings: {meal["servings"]}</p>");
-                    result.AppendLine($"<a href='{meal["sourceUrl"]}' target='_blank' class='button'>{day.Path} {meal["title"]}</a>");
-                    result.AppendLine("</div>");
-                }
-            }
-            else
-            {
-                result.AppendLine("<p>No meals found.</p>");
-            }
+            result.AppendLine("<div class='diet-plan'>");
 
-            result.AppendLine("<h3>Nutrients:</h3>");
-            var dayNutrients = day.First["nutrients"];
-            if (dayNutrients != null)
+            if (json["week"] != null)
             {
-                foreach (var nutrient in dayNutrients.Children<JProperty>())
+                foreach (var day in json["week"])
                 {
-                    var nutrientValue = nutrient.Value as JObject;
-                    if (nutrientValue != null)
+                    result.AppendLine($"<h2>{day.Path}</h2>");
+
+                    var dayMeals = day.First["meals"];
+                    if (dayMeals != null)
                     {
-                        result.AppendLine($"<p>{nutrient.Name}: {nutrientValue["amount"]} {nutrientValue["unit"]}</p>");
+                        foreach (var meal in dayMeals)
+                        {
+                            result.AppendLine("<div class='meal'>");
+                            result.AppendLine($"<h3>{meal["title"]}</h3>");
+                            result.AppendLine($"<p>Ready in {meal["readyInMinutes"]} minutes</p>");
+                            result.AppendLine($"<p>Servings: {meal["servings"]}</p>");
+                            result.AppendLine($"<a href='{meal["sourceUrl"]}' target='_blank' class='button'>{day.Path} {meal["title"]}</a>");
+                            result.AppendLine("</div>");
+                        }
+                    }
+                    else
+                    {
+                        result.AppendLine("<p>No meals found.</p>");
+                    }
+
+                    result.AppendLine("<h3>Nutrients:</h3>");
+                    var dayNutrients = day.First["nutrients"];
+                    if (dayNutrients != null)
+                    {
+                        foreach (var nutrient in dayNutrients.Children<JProperty>())
+                        {
+                            var nutrientValue = nutrient.Value as JObject;
+                            if (nutrientValue != null)
+                            {
+                                result.AppendLine($"<p>{nutrient.Name}: {nutrientValue["amount"]} {nutrientValue["unit"]}</p>");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        result.AppendLine("<p>No nutrients information found.</p>");
                     }
                 }
             }
             else
             {
-                result.AppendLine("<p>No nutrients information found.</p>");
+                result.AppendLine("<p>No weekly meal plan found.</p>");
             }
+
+            result.AppendLine("</div>");
+
+            return result.ToString();
         }
-    }
-    else
-    {
-        result.AppendLine("<p>No weekly meal plan found.</p>");
-    }
-
-    result.AppendLine("</div>");
-
-    return result.ToString();
-}
     }
 }
