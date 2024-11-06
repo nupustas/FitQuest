@@ -3,5 +3,61 @@
 
 </head>
 <body>
-    <h1> Fitness</h1>
+   
+    @{
+        var userID = Context.Session.GetInt32("UserId");
+        if (userID==null)
+    {
+        <h1>Log in to get workout plans</h1>
+    }
+    else
+    {
+    
+        var username = Context.Session.GetString("Username");
+        
+        <h1>Hi @username, </h1>
+
+        <form method="post" action="/UserProfile/SaveProfile">
+
+        <div>
+            <label>Age:</label>
+            <input type="number" name="Age" min="0" required />
+        </div>
+
+        <div>
+            <label>Height (cm):</label>
+            <input type="number" name="Height" min="0" required /> <!-- Corrected 'namer' to 'name' -->
+        </div>
+
+        <div>
+            <label>Weight (kg):</label>
+            <input type="number" name="Weight" min="0" required />
+        </div>
+
+        <div>
+            <label>Goals:</label>
+            <select name="Goals" required>
+                <option value="lose weight">Lose Weight</option>
+                <option value="muscle gain">Muscle Gain</option>
+                <option value="gain weight">Gain Weight</option>
+                <option value="maintain weight">Maintain Weight</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Workout Frequency (days/week):</label>
+            <input type="number" name="WorkoutFrequency" min="0" max="7" required />
+        </div>
+
+        <div>
+            <label>Do you have access to a gym?</label>
+            <input type="checkbox" name="HasGymAccess" value="true" /> <!-- Added value -->
+        </div>
+
+        <button type="submit">Save</button>
+    </form>
+    }
+}
+
+
 </body>
