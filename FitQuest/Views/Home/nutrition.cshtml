@@ -1,6 +1,23 @@
-<!DOCTYPE html>
+@model FitQuest.Models.DietPlanViewModel
 
+<!DOCTYPE html>
 <html>
-        <title>Nutrition</title>
-        <h1> Nutrition</h1>
+<head>
+    <title>Diet Plan</title>
+</head>
+<body>
+    <h1>Generate Diet Plan</h1>
+    <form method="post">
+        <label for="diet">Diet Type:</label>
+        <input type="text" id="diet" name="diet" required />
+        <label for="calories">Target Calories:</label>
+        <input type="number" id="calories" name="calories" required />
+        <button type="submit">Generate Plan</button>
+    </form>
+    @if (Model != null && !string.IsNullOrEmpty(Model.DietPlan))
+    {
+        <h2>Diet Plan Result</h2>
+        <pre>@Model.DietPlan</pre>
+    }
+</body>
 </html>

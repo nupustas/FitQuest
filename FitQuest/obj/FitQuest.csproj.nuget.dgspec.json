@@ -1,28 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\FitQuest.csproj": {}
+    "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\FitQuest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\FitQuest.csproj": {
+    "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\FitQuest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\FitQuest.csproj",
+        "projectUniqueName": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\FitQuest.csproj",
         "projectName": "FitQuest",
-        "projectPath": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\FitQuest.csproj",
-        "packagesPath": "C:\\Users\\vejas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\obj\\",
+        "projectPath": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\FitQuest.csproj",
+        "packagesPath": "C:\\Users\\petru\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\vejas\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\petru\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -104,7 +101,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.402/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
