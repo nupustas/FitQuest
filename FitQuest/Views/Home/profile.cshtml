@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-
 <html>
-        <title>Nutrition</title>
-         @{
-                        var username = Context.Session.GetString("Username");
-                        }
-        <h1> Hi, @username</h1>
+<head>
+    <title>Profile</title>
+</head>
+<body>
+    @{
+        var username = Context.Session.GetString("Username");
+    }
+    <h1>Hi @username, </h1>
 
-
-
-
+</body>
 </html>

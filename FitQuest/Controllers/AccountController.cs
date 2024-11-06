@@ -42,7 +42,11 @@ namespace FitQuest.Controllers
             }
 
             var hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
-            var user = new User { Username = username, Email = email, Password = hashedPassword };
+            var user = new User { 
+                Username = username, 
+                Email = email, 
+                Password = hashedPassword 
+                };
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
@@ -91,6 +95,7 @@ namespace FitQuest.Controllers
             if (user != null && BCrypt.Net.BCrypt.Verify(password, user.Password))
             {
                 HttpContext.Session.SetString("Username", user.Username);
+                HttpContext.Session.SetInt32("UserId", user.Id);
                 
                 if (!user.EmailConfirmed)
                 {
@@ -99,7 +104,7 @@ namespace FitQuest.Controllers
                 }
 
                 // Sign in the user
-                HttpContext.Session.SetString("UserId", user.Id.ToString());
+                
 
                 if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
                 {

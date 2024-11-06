@@ -11,6 +11,7 @@ namespace FitQuest.Data
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<UserData> UserData { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
