@@ -66,16 +66,19 @@ namespace FitQuest.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Nutrition(string diet, int calories)
+        public async Task<IActionResult> Nutrition(int age, string gender, double weight, double height, string exerciseGoal, int exerciseFrequency)
         {
-            var dietPlan = await _dietPlanService.GenerateDietPlanAsync(diet, calories);
-
-            // Log the raw API response for debugging
-            System.Diagnostics.Debug.WriteLine(dietPlan);
+            var dietPlan = await _dietPlanService.GenerateDietPlanAsync(age, gender, weight, height, exerciseGoal, exerciseFrequency);
 
             var viewModel = new DietPlanViewModel
             {
-                DietPlan = dietPlan
+                DietPlan = dietPlan,
+                Age = age,
+                Gender = gender,
+                Weight = weight,
+                Height = height,
+                ExerciseGoal = exerciseGoal,
+                ExerciseFrequency = exerciseFrequency
             };
             return View(viewModel);
         }
