@@ -18,11 +18,10 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true; // Make the cookie essential
 });
 
-
 builder.Services.AddControllersWithViews();
 builder.Services.AddTransient<IEmailSender, EmailSender>();
+builder.Services.AddHttpClient<IDietPlanService, DietPlanService>(); // Register DietPlanService
 builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
-
 
 builder.Services.ConfigureApplicationCookie(options =>
 {
@@ -37,8 +36,6 @@ builder.Services.ConfigureApplicationCookie(options =>
 });
 
 var app = builder.Build();
-
-
 
 // Configure the HTTP request pipeline
 if (app.Environment.IsDevelopment())
@@ -55,8 +52,6 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
-
 
 app.UseSession();
 

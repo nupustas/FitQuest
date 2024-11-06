@@ -9,43 +9,43 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = FitQuest
 build_property.RootNamespace = FitQuest
-build_property.ProjectDir = C:\Users\vejas\OneDrive\Desktop\FitQuest\FitQuest\
+build_property.ProjectDir = C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\vejas\OneDrive\Desktop\FitQuest\FitQuest
+build_property.MSBuildProjectDirectory = C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/vejas/OneDrive/Desktop/FitQuest/FitQuest/Views/Home/fitness.cshtml]
+[C:/Users/petru/Desktop/VU/Komparkas/Project/FitQuest/FitQuest/Views/Home/fitness.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxmaXRuZXNzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vejas/OneDrive/Desktop/FitQuest/FitQuest/Views/Home/Index.cshtml]
+[C:/Users/petru/Desktop/VU/Komparkas/Project/FitQuest/FitQuest/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vejas/OneDrive/Desktop/FitQuest/FitQuest/Views/Home/Login.cshtml]
+[C:/Users/petru/Desktop/VU/Komparkas/Project/FitQuest/FitQuest/Views/Home/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vejas/OneDrive/Desktop/FitQuest/FitQuest/Views/Home/nutrition.cshtml]
+[C:/Users/petru/Desktop/VU/Komparkas/Project/FitQuest/FitQuest/Views/Home/nutrition.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxudXRyaXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vejas/OneDrive/Desktop/FitQuest/FitQuest/Views/Home/profile.cshtml]
+[C:/Users/petru/Desktop/VU/Komparkas/Project/FitQuest/FitQuest/Views/Home/profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxwcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vejas/OneDrive/Desktop/FitQuest/FitQuest/Views/Home/progress.cshtml]
+[C:/Users/petru/Desktop/VU/Komparkas/Project/FitQuest/FitQuest/Views/Home/progress.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxwcm9ncmVzcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vejas/OneDrive/Desktop/FitQuest/FitQuest/Views/Home/recipes.cshtml]
+[C:/Users/petru/Desktop/VU/Komparkas/Project/FitQuest/FitQuest/Views/Home/recipes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxyZWNpcGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vejas/OneDrive/Desktop/FitQuest/FitQuest/Views/Home/RegistrationConfirmation.cshtml]
+[C:/Users/petru/Desktop/VU/Komparkas/Project/FitQuest/FitQuest/Views/Home/RegistrationConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWdpc3RyYXRpb25Db25maXJtYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
