@@ -12,7 +12,7 @@ namespace FitQuest.Services
     public class DietPlanService : IDietPlanService
     {
         private readonly HttpClient _httpClient;
-        private readonly string _apiKey = "14629cbc86de4b4694d7f3c826b9d5a4"; // Replace with your Spoonacular API key
+        private readonly string _apiKey = "14629cbc86de4b4694d7f3c826b9d5a4"; 
 
         public DietPlanService(HttpClient httpClient)
         {
@@ -42,8 +42,8 @@ namespace FitQuest.Services
             {
                 adjustedCalories += 500;
             }
-
-            var response = await _httpClient.GetAsync($"https://api.spoonacular.com/mealplanner/generate?apiKey={_apiKey}&targetCalories={adjustedCalories}");
+            int targetCalories= (int)adjustedCalories;
+            var response = await _httpClient.GetAsync($"https://api.spoonacular.com/mealplanner/generate?apiKey={_apiKey}&targetCalories={targetCalories}");
             response.EnsureSuccessStatusCode(); // This will throw an exception if the status code is not 2xx
 
             var responseString = await response.Content.ReadAsStringAsync();

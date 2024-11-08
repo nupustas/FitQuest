@@ -25,6 +25,6 @@ namespace FitQuest.Models
         public int WorkoutFrequency { get; set; } // Days per week
 
         [Required]
-        public bool HasGymAccess { get; set; }
+        public string Gender { get; set; }
     }
 }

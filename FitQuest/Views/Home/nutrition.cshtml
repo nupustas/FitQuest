@@ -1,124 +1,119 @@
 @model FitQuest.Models.DietPlanViewModel
 
+@{
+    ViewData["Title"] = "Nutrition Plan";
+}
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Diet Plan</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Nutrition Plan</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
             background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
         }
         .container {
             width: 80%;
             margin: auto;
-            overflow: hidden;
         }
         header {
-            background: #333;
-            color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #77aaff 3px solid;
-        }
-        header a {
-            color: #fff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
-        }
-        header ul {
-            padding: 0;
-            list-style: none;
-        }
-        header li {
-            float: left;
-            display: inline;
-            padding: 0 20px 0 20px;
-        }
-        header #branding {
-            float: left;
-        }
-        header #branding h1 {
-            margin: 0;
-        }
-        header nav {
-            float: right;
-            margin-top: 10px;
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
         }
         .button {
             display: inline-block;
-            color: #fff;
-            background: #333;
             padding: 10px 20px;
+            background-color: #333;
+            color: white;
             text-align: center;
             border-radius: 5px;
-            text-decoration: none;
         }
         .button:hover {
-            background: #77aaff;
+            background-color: #77aaff;
         }
-        .content {
-            padding: 20px;
-            background: #fff;
-            border-radius: 5px;
+        #dietPlanResult {
             margin-top: 20px;
+            padding: 10px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
         }
-        .meal {
-            margin-bottom: 20px;
+        .error-message {
+            color: red;
+            font-weight: bold;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #ffe6e6;
+            border: 1px solid red;
+            border-radius: 5px;
         }
-        .meal h3 {
-            margin: 0;
+        .error-message .button {
+            background-color: #f44336;
         }
     </style>
 </head>
 <body>
+
     <header>
-        <div class="container">
-            <div id="branding">
-                <h1>Diet Plan Generator</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/Home/Nutrition">Generate Diet Plan</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1>Diet Plan Generator</h1>
     </header>
+
     <div class="container">
-        <div class="content">
-            <h1>Generate Diet Plan</h1>
-            <form method="post">
-                <label for="age">Age:</label>
-                <input type="number" id="age" name="age" required />
-                <label for="gender">Gender:</label>
-                <select id="gender" name="gender" required>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                </select>
-                <label for="weight">Weight (kg):</label>
-                <input type="number" id="weight" name="weight" required />
-                <label for="height">Height (cm):</label>
-                <input type="number" id="height" name="height" required />
-                <label for="exerciseGoal">Exercise Goal:</label>
-                <select id="exerciseGoal" name="exerciseGoal" required>
-                    <option value="lose">Lose Weight</option>
-                    <option value="maintain">Maintain Weight</option>
-                    <option value="gain">Gain Weight</option>
-                </select>
-                <label for="exerciseFrequency">Exercise Frequency (days per week):</label>
-                <input type="number" id="exerciseFrequency" name="exerciseFrequency" required />
-                <button type="submit" class="button">Generate Plan</button>
+        <!-- Check if the user is logged in -->
+        @if (string.IsNullOrEmpty(Context.Session.GetString("Username")))
+        {
+            <!-- Show an error message if the user is not logged in -->
+            <div class="error-message">
+                You are not logged in. Please log in to generate a nutrition plan.
+                <br />
+                <!-- Redirect button to login page -->
+                <a href="/Home/Login" class="button">Go to Login</a>
+            </div>
+        }
+        else
+        {
+            <!-- If logged in, allow generating the nutrition plan -->
+            <h2>Click below to generate your personalized diet plan</h2>
+
+            <!-- Button to trigger nutrition plan generation -->
+            <form method="post" action="/Home/GenerateNutritionPlan">
+                <button type="submit" class="button">Generate Nutrition Plan</button>
             </form>
+
+            <!-- Show error message if there is any -->
+            @if (ViewBag.ErrorMessage != null)
+            {
+                <div class="error-message">
+                    @ViewBag.ErrorMessage
+                    <!-- Button to redirect to profile page if there is an error -->
+                    <br />
+                    <a href="/Home/Profile" class="button">Go to Profile</a>
+                </div>
+            }
+
+            <!-- Display the generated nutrition plan if available -->
             @if (Model != null && !string.IsNullOrEmpty(Model.DietPlan))
             {
-                <h2>Diet Plan Result</h2>
-                <div>@Html.Raw(Model.DietPlan)</div>
+                <div id="dietPlanResult">
+                    <h3>Your Nutrition Plan</h3>
+                    @Html.Raw(Model.DietPlan)
+                </div>
             }
-        </div>
+
+            <!-- If no diet plan generated, prompt user to update profile -->
+            @if (Model == null || string.IsNullOrEmpty(Model.DietPlan))
+            {
+                <p>Please update your profile information to generate a nutrition plan.</p>
+            }
+        }
     </div>
+
 </body>
 </html>
