@@ -13,7 +13,7 @@ namespace FitQuest.Services
     public class DietPlanService : IDietPlanService
     {
         private readonly HttpClient _httpClient;
-        private readonly string _apiKey = "14629cbc86de4b4694d7f3c826b9d5a4"; 
+        private readonly string _apiKey;
 
         public DietPlanService(HttpClient httpClient, IConfiguration configuration)
         {
@@ -36,16 +36,22 @@ namespace FitQuest.Services
 
             // Adjust calories based on exercise frequency and goal
             double adjustedCalories = bmr * (1.2 + (exerciseFrequency * 0.1)); // Example adjustment
+            string dietType = "balanced"; // Default diet type
+
             if (exerciseGoal.ToLower() == "lose")
             {
                 adjustedCalories -= 500;
+                dietType = "high-protein";
             }
             else if (exerciseGoal.ToLower() == "gain")
             {
                 adjustedCalories += 500;
+                dietType = "low-fat";
             }
-            int targetCalories= (int)adjustedCalories;
-            var response = await _httpClient.GetAsync($"https://api.spoonacular.com/mealplanner/generate?apiKey={_apiKey}&targetCalories={targetCalories}");
+            // If exerciseGoal is "maintain", dietType remains "balanced"
+
+            int targetCalories = (int)adjustedCalories;
+            var response = await _httpClient.GetAsync($"https://api.spoonacular.com/mealplanner/generate?apiKey={_apiKey}&targetCalories={targetCalories}&diet={dietType}");
             response.EnsureSuccessStatusCode(); // This will throw an exception if the status code is not 2xx
 
             var responseString = await response.Content.ReadAsStringAsync();
