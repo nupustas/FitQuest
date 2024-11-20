@@ -19,12 +19,12 @@ namespace FitQuest.Models
         public int Weight { get; set; }  // Weight in kg
 
         [Required]
-        public string Goals { get; set; }  // e.g., "lose weight", "muscle gain", etc.
+        public string Goals { get; set; }
 
         [Required]
         public int WorkoutFrequency { get; set; } // Days per week
 
         [Required]
-        public bool HasGymAccess { get; set; }
+        public string Gender { get; set; }
     }
 }

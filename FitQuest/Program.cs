@@ -35,6 +35,15 @@ builder.Services.ConfigureApplicationCookie(options =>
     };
 });
 
+// Configure CORS to allow all origins
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins",
+        builder => builder.AllowAnyOrigin()
+                          .AllowAnyHeader()
+                          .AllowAnyMethod());
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline
@@ -53,7 +62,12 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+// Apply the CORS policy
+app.UseCors("AllowAllOrigins");
+
 app.UseSession();
+
+app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",

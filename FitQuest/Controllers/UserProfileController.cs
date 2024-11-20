@@ -52,7 +52,7 @@ namespace FitQuest.Controllers
                     existingProfile.Weight = userData.Weight;
                     existingProfile.Goals = userData.Goals;
                     existingProfile.WorkoutFrequency = userData.WorkoutFrequency;
-                    existingProfile.HasGymAccess = userData.HasGymAccess;
+                    existingProfile.Gender = userData.Gender;
 
                     // Save changes for the updated profile
                     await _context.SaveChangesAsync();
@@ -68,19 +68,19 @@ namespace FitQuest.Controllers
                         Weight = userData.Weight,
                         Goals = userData.Goals,
                         WorkoutFrequency = userData.WorkoutFrequency,
-                        HasGymAccess = userData.HasGymAccess
+                        Gender = userData.Gender
                     };
 
                     _context.UserData.Add(newUserData); // Add new UserData entry
                     await _context.SaveChangesAsync(); // Save changes to the database
                 }
 
-                return RedirectToAction("Fitness", "Home");
+                return RedirectToAction("Profile", "Home");
             }
 
            
 
-            return RedirectToAction("Fitness", "Home");
+            return RedirectToAction("Profile", "Home");
         }
     }
 }
