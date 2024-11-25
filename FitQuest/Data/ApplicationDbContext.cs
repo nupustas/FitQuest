@@ -12,6 +12,7 @@ namespace FitQuest.Data
 
         public DbSet<User> Users { get; set; }
         public DbSet<UserData> UserData { get; set; }
+        public DbSet<PasswordResetToken> PasswordResetTokens { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -27,6 +28,17 @@ namespace FitQuest.Data
                 entity.Property(e => e.Password).HasColumnName("Password");
                 entity.Property(e => e.Email).HasColumnName("Email");
                 entity.Property(e => e.EmailConfirmed).HasColumnName("EmailConfirmed");
+            });
+
+            // Map the PasswordResetToken properties to the table structure
+            modelBuilder.Entity<PasswordResetToken>(entity =>
+            {
+                entity.ToTable("PasswordResetTokens");
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Id).HasColumnName("Id");
+                entity.Property(e => e.Email).HasColumnName("Email");
+                entity.Property(e => e.Token).HasColumnName("Token");
+                entity.Property(e => e.Expiration).HasColumnName("Expiration");
             });
         }
     }
