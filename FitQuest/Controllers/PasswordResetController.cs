@@ -25,13 +25,14 @@ namespace FitQuest.Controllers
             _context = context;
         }
 
-        // Endpoint to request password reset
+        // GET: Request Password Reset
         [HttpGet("RequestPasswordReset")]
         public IActionResult RequestPasswordReset()
         {
             return View("~/Views/Home/RequestPasswordReset.cshtml");
         }
 
+        // POST: Handle Password Reset Request
         [HttpPost("RequestPasswordReset")]
         public async Task<IActionResult> RequestPasswordReset([FromForm] PasswordResetRequest request)
         {
@@ -42,7 +43,7 @@ namespace FitQuest.Controllers
 
             _logger.LogInformation("RequestPasswordReset called with email: {Email}", request.Email);
 
-            // Check if the email exists in the database
+            // Check if the email exists
             var userExists = _context.Users.Any(u => u.Email == request.Email);
             if (!userExists)
             {
@@ -51,6 +52,7 @@ namespace FitQuest.Controllers
                 return View("~/Views/Home/RequestPasswordReset.cshtml", request);
             }
 
+            // Generate and send token
             var token = GeneratePasswordResetToken(request.Email);
             try
             {
@@ -66,16 +68,58 @@ namespace FitQuest.Controllers
             }
         }
 
-        // Method to generate password reset token
+        // GET: Reset Password
+        [HttpGet("ResetPassword")]
+        public IActionResult ResetPassword(string token)
+        {
+            if (string.IsNullOrEmpty(token))
+            {
+                return BadRequest("Token is required.");
+            }
+
+            ViewData["Token"] = token; // Pass the token to the view
+            return View("~/Views/Home/ResetPassword.cshtml");
+        }
+
+        // POST: Handle Password Reset
+        [HttpPost("ResetPassword")]
+        public async Task<IActionResult> ResetPassword([FromForm] string token, [FromForm] string newPassword)
+        {
+            if (string.IsNullOrEmpty(token) || string.IsNullOrEmpty(newPassword))
+            {
+                return BadRequest(new { error = "Token and new password are required." });
+            }
+
+            var passwordResetToken = _context.PasswordResetTokens
+                .FirstOrDefault(t => t.Token == token && t.Expiration > DateTime.UtcNow);
+            if (passwordResetToken == null)
+            {
+                return BadRequest(new { error = "Invalid or expired token." });
+            }
+
+            var user = _context.Users.FirstOrDefault(u => u.Email == passwordResetToken.Email);
+            if (user == null)
+            {
+                return BadRequest(new { error = "Invalid email address." });
+            }
+
+            // Update the user's password
+            user.Password = BCrypt.Net.BCrypt.HashPassword(newPassword);
+            _context.PasswordResetTokens.Remove(passwordResetToken); // Remove token after use
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "Password has been reset successfully." });
+        }
+
+        // Helper: Generate password reset token
         private string GeneratePasswordResetToken(string email)
         {
             var token = Guid.NewGuid().ToString();
-            // Save the token and email to the database with an expiration time
             SaveTokenToDatabase(email, token, DateTime.UtcNow.AddHours(1));
             return token;
         }
 
-        // Method to save token to the database
+        // Helper: Save token to the database
         private void SaveTokenToDatabase(string email, string token, DateTime expiration)
         {
             var passwordResetToken = new PasswordResetToken
@@ -88,56 +132,14 @@ namespace FitQuest.Controllers
             _context.SaveChanges();
         }
 
-        // Method to send password reset email
+        // Helper: Send password reset email
         private async Task SendPasswordResetEmailAsync(string email, string token)
         {
-            var resetLink = Url.Action(nameof(PasswordResetController.ResetPassword), "PasswordReset", new { token }, Request.Scheme);
+            var resetLink = Url.Action(nameof(ResetPassword), "PasswordReset", new { token }, Request.Scheme);
             var subject = "Password Reset Request";
             var body = $"Please reset your password by clicking <a href=\"{resetLink}\">here</a>.";
 
-            // Use your email sender API to send the email
             await _emailSender.SendEmailAsync(email, subject, body);
-        }
-
-        // Endpoint to reset password
-        [HttpGet("ResetPassword")]
-        public IActionResult ResetPassword(string token)
-        {
-            if (string.IsNullOrEmpty(token))
-            {
-                return BadRequest("A token is required for password reset.");
-            }
-
-            var model = new ResetPasswordModel { Token = token };
-            return View("~/Views/Home/ResetPassword.cshtml", model);
-        }
-
-        [HttpPost("ResetPassword")]
-        public async Task<IActionResult> ResetPassword([FromForm] ResetPasswordModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View("~/Views/Home/ResetPassword.cshtml", model);
-            }
-
-            var passwordResetToken = _context.PasswordResetTokens.FirstOrDefault(t => t.Token == model.Token && t.Expiration > DateTime.UtcNow);
-            if (passwordResetToken == null)
-            {
-                return BadRequest("Invalid or expired token.");
-            }
-
-            var user = _context.Users.FirstOrDefault(u => u.Email == passwordResetToken.Email);
-            if (user == null)
-            {
-                return BadRequest("Invalid email address.");
-            }
-
-            // Reset the password and hash it
-            user.Password = BCrypt.Net.BCrypt.HashPassword(model.NewPassword);
-            _context.PasswordResetTokens.Remove(passwordResetToken); // Remove the token after use
-            await _context.SaveChangesAsync();
-
-            return Ok("Password has been reset successfully.");
         }
     }
 }
