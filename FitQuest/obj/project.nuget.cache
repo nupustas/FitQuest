@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QNOxb0zaakk=",
+  "dgSpecHash": "HfIAPpNxoMg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\FitQuest\\FitQuest.csproj",
+  "projectFilePath": "C:\\Users\\vejas\\OneDrive\\Desktop\\aaaaaaaaa\\FitQuest\\FitQuest\\FitQuest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vejas\\.nuget\\packages\\azure.ai.openai\\1.0.0-beta.5\\azure.ai.openai.1.0.0-beta.5.nupkg.sha512",
     "C:\\Users\\vejas\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",

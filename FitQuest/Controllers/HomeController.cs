@@ -118,6 +118,12 @@ public async Task<IActionResult> GenerateNutritionPlan()
 
     // Return the generated diet plan to the view
     return View("Nutrition", viewModel);
-}
+    }
+
+    [HttpGet]
+        public IActionResult ResetPasswordConfirmation()
+        {
+            return View();
+        }
     }
 }

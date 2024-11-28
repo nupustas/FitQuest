@@ -9075,11 +9075,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\fitquest\\FitQuest.csproj",
+      "projectUniqueName": "C:\\Users\\vejas\\OneDrive\\Desktop\\aaaaaaaaa\\FitQuest\\FitQuest\\FitQuest.csproj",
       "projectName": "FitQuest",
-      "projectPath": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\fitquest\\FitQuest.csproj",
+      "projectPath": "C:\\Users\\vejas\\OneDrive\\Desktop\\aaaaaaaaa\\FitQuest\\FitQuest\\FitQuest.csproj",
       "packagesPath": "C:\\Users\\vejas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\fitquest\\obj\\",
+      "outputPath": "C:\\Users\\vejas\\OneDrive\\Desktop\\aaaaaaaaa\\FitQuest\\FitQuest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\vejas\\AppData\\Roaming\\NuGet\\NuGet.Config",
