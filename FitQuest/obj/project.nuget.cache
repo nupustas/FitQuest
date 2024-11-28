@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "QNOxb0zaakk=",
+=======
+  "dgSpecHash": "I7VZRO4y/kI=",
+>>>>>>> 2c0d9cd85544e779f5784658f7e683c1bc29d1b0
   "success": true,
   "projectFilePath": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\FitQuest\\FitQuest.csproj",
   "expectedPackageFiles": [

@@ -1,6 +1,10 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "Hash": "s92RreHS88SqpwjZz/Qa4TNwL8RC1xeqCBb0wDZkuYk=",
+=======
+  "Hash": "ade9VRzfrNJ1vejg+C10kLEgQLWOK5Y0vhV89OeNXY0=",
+>>>>>>> 2c0d9cd85544e779f5784658f7e683c1bc29d1b0
   "Source": "FitQuest",
   "BasePath": "_content/FitQuest",
   "Mode": "Default",
@@ -10,13 +14,18 @@
     {
       "Name": "FitQuest\\wwwroot",
       "Source": "FitQuest",
+<<<<<<< HEAD
       "ContentRoot": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\FitQuest\\wwwroot\\",
+=======
+      "ContentRoot": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\",
+>>>>>>> 2c0d9cd85544e779f5784658f7e683c1bc29d1b0
       "BasePath": "_content/FitQuest",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\FitQuest\\wwwroot\\css\\fitness.css",
       "SourceId": "FitQuest",
       "SourceType": "Discovered",
@@ -40,6 +49,12 @@
       "SourceId": "FitQuest",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\FitQuest\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\css\\login.css",
+      "SourceId": "FitQuest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\",
+>>>>>>> 2c0d9cd85544e779f5784658f7e683c1bc29d1b0
       "BasePath": "_content/FitQuest",
       "RelativePath": "css/login.css",
       "AssetKind": "All",
@@ -55,10 +70,17 @@
       "OriginalItemSpec": "wwwroot\\css\\login.css"
     },
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\FitQuest\\wwwroot\\css\\maindesign.css",
       "SourceId": "FitQuest",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\FitQuest\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\css\\maindesign.css",
+      "SourceId": "FitQuest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\",
+>>>>>>> 2c0d9cd85544e779f5784658f7e683c1bc29d1b0
       "BasePath": "_content/FitQuest",
       "RelativePath": "css/maindesign.css",
       "AssetKind": "All",
@@ -74,6 +96,7 @@
       "OriginalItemSpec": "wwwroot\\css\\maindesign.css"
     },
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\FitQuest\\wwwroot\\css\\recipes_style.css",
       "SourceId": "FitQuest",
       "SourceType": "Discovered",
@@ -97,6 +120,12 @@
       "SourceId": "FitQuest",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\FitQuest\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\css\\site.css",
+      "SourceId": "FitQuest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\",
+>>>>>>> 2c0d9cd85544e779f5784658f7e683c1bc29d1b0
       "BasePath": "_content/FitQuest",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -112,10 +141,17 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\FitQuest\\wwwroot\\images\\blog-1.jpg",
       "SourceId": "FitQuest",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\FitQuest\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\images\\blog-1.jpg",
+      "SourceId": "FitQuest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\",
+>>>>>>> 2c0d9cd85544e779f5784658f7e683c1bc29d1b0
       "BasePath": "_content/FitQuest",
       "RelativePath": "images/blog-1.jpg",
       "AssetKind": "All",
@@ -131,10 +167,17 @@
       "OriginalItemSpec": "wwwroot\\images\\blog-1.jpg"
     },
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\FitQuest\\wwwroot\\images\\blog-2.jpg",
       "SourceId": "FitQuest",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\FitQuest\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\images\\blog-2.jpg",
+      "SourceId": "FitQuest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\",
+>>>>>>> 2c0d9cd85544e779f5784658f7e683c1bc29d1b0
       "BasePath": "_content/FitQuest",
       "RelativePath": "images/blog-2.jpg",
       "AssetKind": "All",
@@ -150,10 +193,17 @@
       "OriginalItemSpec": "wwwroot\\images\\blog-2.jpg"
     },
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\FitQuest\\wwwroot\\images\\blog-3.jpg",
       "SourceId": "FitQuest",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\FitQuest\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\images\\blog-3.jpg",
+      "SourceId": "FitQuest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\",
+>>>>>>> 2c0d9cd85544e779f5784658f7e683c1bc29d1b0
       "BasePath": "_content/FitQuest",
       "RelativePath": "images/blog-3.jpg",
       "AssetKind": "All",
@@ -169,10 +219,17 @@
       "OriginalItemSpec": "wwwroot\\images\\blog-3.jpg"
     },
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\FitQuest\\wwwroot\\images\\gym_background.jpg",
       "SourceId": "FitQuest",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\FitQuest\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\images\\gym_background.jpg",
+      "SourceId": "FitQuest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\",
+>>>>>>> 2c0d9cd85544e779f5784658f7e683c1bc29d1b0
       "BasePath": "_content/FitQuest",
       "RelativePath": "images/gym_background.jpg",
       "AssetKind": "All",
@@ -188,10 +245,17 @@
       "OriginalItemSpec": "wwwroot\\images\\gym_background.jpg"
     },
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\FitQuest\\wwwroot\\images\\login_back.jpg",
       "SourceId": "FitQuest",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\FitQuest\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\images\\login_back.jpg",
+      "SourceId": "FitQuest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\",
+>>>>>>> 2c0d9cd85544e779f5784658f7e683c1bc29d1b0
       "BasePath": "_content/FitQuest",
       "RelativePath": "images/login_back.jpg",
       "AssetKind": "All",
@@ -207,10 +271,17 @@
       "OriginalItemSpec": "wwwroot\\images\\login_back.jpg"
     },
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\FitQuest\\wwwroot\\images\\logo_flower.png",
       "SourceId": "FitQuest",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\FitQuest\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\images\\logo_flower.png",
+      "SourceId": "FitQuest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\",
+>>>>>>> 2c0d9cd85544e779f5784658f7e683c1bc29d1b0
       "BasePath": "_content/FitQuest",
       "RelativePath": "images/logo_flower.png",
       "AssetKind": "All",
@@ -226,10 +297,17 @@
       "OriginalItemSpec": "wwwroot\\images\\logo_flower.png"
     },
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\FitQuest\\wwwroot\\images\\logo.png",
       "SourceId": "FitQuest",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\FitQuest\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\images\\logo.png",
+      "SourceId": "FitQuest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\",
+>>>>>>> 2c0d9cd85544e779f5784658f7e683c1bc29d1b0
       "BasePath": "_content/FitQuest",
       "RelativePath": "images/logo.png",
       "AssetKind": "All",
@@ -245,10 +323,17 @@
       "OriginalItemSpec": "wwwroot\\images\\logo.png"
     },
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\FitQuest\\wwwroot\\images\\team.jpg",
       "SourceId": "FitQuest",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\FitQuest\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\images\\team.jpg",
+      "SourceId": "FitQuest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\",
+>>>>>>> 2c0d9cd85544e779f5784658f7e683c1bc29d1b0
       "BasePath": "_content/FitQuest",
       "RelativePath": "images/team.jpg",
       "AssetKind": "All",
@@ -264,10 +349,17 @@
       "OriginalItemSpec": "wwwroot\\images\\team.jpg"
     },
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\FitQuest\\wwwroot\\images\\words_logo.png",
       "SourceId": "FitQuest",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\FitQuest\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\images\\words_logo.png",
+      "SourceId": "FitQuest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\",
+>>>>>>> 2c0d9cd85544e779f5784658f7e683c1bc29d1b0
       "BasePath": "_content/FitQuest",
       "RelativePath": "images/words_logo.png",
       "AssetKind": "All",

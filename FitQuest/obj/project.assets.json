@@ -9070,7 +9070,12 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\vejas\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\petru\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+>>>>>>> 2c0d9cd85544e779f5784658f7e683c1bc29d1b0
   },
   "project": {
     "version": "1.0.0",
@@ -9081,9 +9086,17 @@
       "packagesPath": "C:\\Users\\vejas\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\fitquest\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\vejas\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+=======
+        "C:\\Users\\petru\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config"
+>>>>>>> 2c0d9cd85544e779f5784658f7e683c1bc29d1b0
       ],
       "originalTargetFrameworks": [
         "net8.0"
