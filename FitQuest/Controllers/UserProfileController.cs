@@ -82,5 +82,8 @@ namespace FitQuest.Controllers
 
             return RedirectToAction("Profile", "Home");
         }
+
+    
+
     }
 }

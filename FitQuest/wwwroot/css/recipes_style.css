@@ -1,0 +1,312 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+  }
+  body{
+    background-color: #111921;
+  }
+  footer {
+    text-align: center;
+    padding: 3px;
+    background: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7));
+    color: white;
+  }
+  .header {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(images/gym_background.jpg);
+    background-size: cover; 
+    background-position: center; 
+    position: relative;
+    background-repeat: no-repeat; 
+  }
+  .body-part{
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(#21252e, #21252e);
+    background-size: cover; 
+    background-position: center; 
+    position: relative;
+    background-repeat: no-repeat; 
+  
+  }
+  nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav img{
+    width: 150px;
+  }
+  .nav-links{
+    flex: 1;
+    text-align: right;
+  }
+  .nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+  }
+  .nav-links ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+  }
+  .nav-links ul li::after{
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: #891810;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+  }
+  .nav-links ul li:hover::after{
+    width: 100%;
+  }
+  nav .fa{
+    display: none;
+  }
+  @media(max-width: 700px){
+    .text-box h1{
+      font-size: 20px;
+    }
+    .nav-links ul li{
+      display: block;
+    }
+    .nav-links{
+      position: absolute;
+      background: black;
+      height: 100%;
+      width: 200px;
+      top: 0;
+      right: -200px;
+      text-align: left;
+      z-index: 2;
+      transition: 1s;
+    }
+    nav .fa{
+      display: block;
+      color: #fff;
+      margin: 10px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+    .nav-links ul{
+      padding: 30px;
+    }
+  
+  
+  }
+  .diet{
+    padding: 0 2rem; /* Increased padding */
+    max-width: 1200px; /* Set a max width */
+    margin: auto; /* Center the content */
+  }
+  .container{
+    padding: 0 1rem;
+  }
+  .diet .controls{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    list-style: none;
+    margin: 20px 0;
+
+  }
+  .add_new {
+    display: flex; /* Use flexbox to align items */
+    justify-content: flex-start; /* Align button to the left */
+    margin: 20px 0; /* Add margin to the top and bottom of the container */
+    
+}
+
+.add_new button {
+    width: 20%; /* Width of the button */
+    height: 35px; /* Height of the button */
+    margin: 10px 20px; /* Add margin for space around the button */
+    color: #fff; /* Text color */
+    background: #891810; /* Background color */
+    font-size: 1em; /* Font size */
+    outline: none; /* Remove outline */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    transition: background 0.2s ease-in, transform 0.2s ease-in; /* Transition effects */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+.add_new button i {
+  margin-right: 5px; /* Space between icon and text */
+  font-size: 1.2em; /* Adjust icon size if needed */
+  vertical-align: middle;
+  color: white; /* Align icon vertically with text */
+}
+
+.add_new button:hover {
+    background: #a61b1b; /* Slightly lighter background on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+  .diet .controls .buttons{
+    padding: 3rem 2rem;
+    background: white;
+    cursor: pointer;
+    margin-bottom: 3rem;
+    box-shadow: 0 .5rem 1 rem rgba(4, 9, 30, 0.7);
+    text-align: center;
+    border-radius: 1rem;
+
+  }
+  .diet .controls .buttons img{
+    height: 6rem;
+  }
+
+  .diet .controls .buttons h3{
+    font-size: 1.7rem;
+    padding-top: 1rem;
+    color: light black;
+  }
+  .diet .controls .buttons.active{
+    background: #891810;
+    
+
+  }
+  .diet .image-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+    padding: 0 1rem;
+
+  }
+  .diet .image-container .box{
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 .5rem 1rem rgba(4, 9, 30, 0.7);
+    overflow: hidden;
+  }
+  .diet .image-container .box .image{
+    height: 20rem;
+    overflow: hidden;
+    width: 100%;
+  }
+  .diet .image-container .box .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .diet .image-container .box .content{
+    padding: 2rem;
+    
+  }
+  .diet .image-container .box:hover .image img{
+    transform: scale(1.1);
+
+  }
+  .diet .image-container .box .content .link{
+    font-size: 2rem;
+    color: #891810;
+
+  }
+  .diet .image-container .box .content p{
+    padding: 1rem 0;
+    font-size: 1.4rem;
+    color: light black;
+    line-height: 2;
+  }
+  .diet .image-container .box .content .icon{
+    padding-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+  }
+  .diet .image-container .box .content .icon a{
+    font-size: 1.4rem;
+    color: light black;
+
+  }
+  .diet .image-container .box .content .icon a i{
+    padding-right: .5rem;
+    color: #891810;
+  }
+  .diet .image-container .box .content .icon a:hover{
+    color: #891810;
+  }
+
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    width: 90%; /* Could be more or less, depending on screen size */
+    max-width: 600px; /* Max width for larger screens */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: 600;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif; /* Consistent font */
+}
+
+button[type="submit"] {
+    background-color: #28a745; /* Green color */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif; /* Consistent font */
+}
+
+button[type="submit"]:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+  

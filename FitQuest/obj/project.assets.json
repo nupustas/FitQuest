@@ -2,6 +2,23 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "Azure.AI.OpenAI/1.0.0-beta.5": {
+        "type": "package",
+        "dependencies": {
+          "Azure.Core": "1.30.0",
+          "System.Text.Json": "4.7.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Azure.AI.OpenAI.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Azure.AI.OpenAI.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Azure.Core/1.35.0": {
         "type": "package",
         "dependencies": {
@@ -3013,6 +3030,22 @@
     }
   },
   "libraries": {
+    "Azure.AI.OpenAI/1.0.0-beta.5": {
+      "sha512": "wlCf4D6iutnXQXVgNMT9SuO6gFH5e6JHb3yCK4ZF6lL+VtTrTspluqZfySE/C3KK5j2Cqdu6PbsUnZfsu/PPOQ==",
+      "type": "package",
+      "path": "azure.ai.openai/1.0.0-beta.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CHANGELOG.md",
+        "README.md",
+        "azure.ai.openai.1.0.0-beta.5.nupkg.sha512",
+        "azure.ai.openai.nuspec",
+        "azureicon.png",
+        "lib/netstandard2.0/Azure.AI.OpenAI.dll",
+        "lib/netstandard2.0/Azure.AI.OpenAI.xml"
+      ]
+    },
     "Azure.Core/1.35.0": {
       "sha512": "hENcx03Jyuqv05F4RBEPbxz29UrM3Nbhnr6Wl6NQpoU9BCIbL3XLentrxDCTrH54NLS11Exxi/o8MYgT/cnKFA==",
       "type": "package",
@@ -9023,6 +9056,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Azure.AI.OpenAI >= 1.0.0-beta.5",
       "BCrypt.Net-Next >= 4.0.3",
       "MailKit >= 4.8.0",
       "Mailjet.Api >= 3.0.0",
@@ -9036,24 +9070,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\petru\\.nuget\\packages\\": {}
+    "C:\\Users\\vejas\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\FitQuest.csproj",
+      "projectUniqueName": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\fitquest\\FitQuest.csproj",
       "projectName": "FitQuest",
-      "projectPath": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\FitQuest.csproj",
-      "packagesPath": "C:\\Users\\petru\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\obj\\",
+      "projectPath": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\fitquest\\FitQuest.csproj",
+      "packagesPath": "C:\\Users\\vejas\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\fitquest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\petru\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\vejas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -9077,6 +9114,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "Azure.AI.OpenAI": {
+            "target": "Package",
+            "version": "[1.0.0-beta.5, )"
+          },
           "BCrypt.Net-Next": {
             "target": "Package",
             "version": "[4.0.3, )"
@@ -9139,7 +9180,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.402/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

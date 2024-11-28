@@ -106,15 +106,9 @@ namespace FitQuest.Controllers
                 // Sign in the user
                 
 
-                if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
-                {
-                    return Redirect(returnUrl);
-                    
-                }
-                else
-                {
+                
                     return RedirectToAction("Index", "Home");
-                }
+                
             }
 
             ViewBag.Error = "Invalid login credentials";

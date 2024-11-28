@@ -1,0 +1,261 @@
+* {
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+nav {
+  display: flex;
+  padding: 2% 6%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav img {
+  width: 150px;
+}
+
+.nav-links {
+  flex: 1;
+  text-align: right;
+}
+
+.nav-links ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+}
+
+.nav-links ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.nav-links ul li::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #891810;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+
+.nav-links ul li:hover::after {
+  width: 100%;
+}
+
+nav .fa {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .text-box h1 {
+      font-size: 20px;
+  }
+  
+  .nav-links ul li {
+      display: block;
+  }
+  
+  .nav-links {
+      position: absolute;
+      background: black;
+      height: 100%;
+      width: 200px;
+      top: 0;
+      right: -200px;
+      text-align: left;
+      z-index: 2;
+      transition: 1s;
+  }
+  
+  nav .fa {
+      display: block;
+      color: #fff;
+      margin: 10px;
+      font-size: 22px;
+      cursor: pointer;
+  }
+  
+  .nav-links ul {
+      padding: 30px;
+  }
+}
+
+body {
+  background: #111921;
+  padding: 10px;
+}
+
+.row-1 {
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.collumn {
+  flex-basis: 14%;
+  background-color: #a5a5a5;
+  background-position: center;
+  position: relative;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  margin-bottom: 5%;
+  padding: 20px 12px;
+  box-sizing: border-box;
+  transition: 0.5s;
+}
+
+.collumn h2 {
+  text-align: center;
+  color: #111921;
+}
+
+.row-2 {
+  margin-top: 1%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  align-items: stretch; /* Ensure all columns stretch to the height of the tallest column */
+}
+
+.collumn-2 {
+  flex-basis: 14%;
+  background-color: white;
+  background-position: center;
+  position: relative;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  margin-bottom: 5%;
+  padding: 20px 12px;
+  box-sizing: border-box;
+  transition: 0.5s;
+  min-height: 300px; /* Set a minimum height */
+}
+
+.row-3 {
+  margin-top: 1%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  align-items: stretch; /* Ensure all columns stretch to the height of the tallest column */
+}
+
+.row-4 {
+  margin-top: 1%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  align-items: stretch; /* Ensure all columns stretch to the height of the tallest column */
+}
+
+.collumn-3 {
+  flex-basis: 70%;
+  background-color: #a5a5a5;
+  background-position: center;
+  position: relative;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  margin: 0 -5px 5% -5px; /* Negative horizontal margin to reduce space */
+  padding: 20px 12px;
+  box-sizing: border-box;
+  transition: 0.5s;
+  min-height: 80px;
+}
+
+.collumn-4 {
+  flex-basis: 28%;
+  background-color: #a5a5a5;
+  background-position: center;
+  position: relative;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  margin: 0 -5px 5% -5px; /* Negative horizontal margin to reduce space */
+  padding: 20px 12px;
+  box-sizing: border-box;
+  transition: 0.5s;
+  min-height: 80px;
+}
+
+.collumn-5 {
+  flex-basis: 70%;
+  background-color: white;
+  background-position: center;
+  position: relative;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  margin: 0 -5px 5% -5px; /* Negative horizontal margin to reduce space */
+  padding: 20px 12px;
+  box-sizing: border-box;
+  transition: 0.5s;
+  min-height: 300px;
+}
+
+.collumn-6 {
+  flex-basis: 28%;
+  background-color: white;
+  background-position: center;
+  position: relative;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  margin: 0 -5px 5% -5px; /* Negative horizontal margin to reduce space */
+  padding: 20px 12px;
+  box-sizing: border-box;
+  transition: 0.5s;
+  min-height: 300px;
+}
+
+.collumn-3 h2 {
+  text-align: center;
+  color: #111921;
+}
+
+.planner h1 {
+  text-align: center;
+  color: white;
+  letter-spacing: 1.3rem;
+}
+
+.meal-log h1 {
+  text-align: center;
+  color: #fff;
+  letter-spacing: 1.3rem;
+  padding-bottom: 20px;
+}
+
+.planner {
+  padding-bottom: 100px;
+}
+
+.edit_plan {
+  background-color: #a5a5a5; /* Button background color */
+  color: #111921; /* Text color */
+  border: none; /* Remove default border */
+  border-radius: 20px; /* Rounded corners */
+  padding: 10px 20px; /* Padding for the button */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  margin-right: 20px; /* Space between button and columns */
+  float: right;
+}
+
+.edit_plan:hover {
+  background-color: #7a7878;
+  transition: background-color 0.3s ease;
+}
+
+/* New styles for AI-generated text */
+.workout-plan pre.plan-content {
+  color: white; /* Set the text color to white */
+  background-color: #333; /* Optional: Adds a dark background for contrast */
+  padding: 15px;
+  border-radius: 5px;
+  font-family: monospace; /* Optional: Makes the text look like a code block */
+  white-space: pre-wrap; /* Makes the text wrap at the edge of the container */
+  word-wrap: break-word; /* Ensures long words wrap to the next line */
+  max-width: 100%; /* Prevent the text from going beyond the container */
+  overflow-wrap: break-word; /* Ensure long words break and wrap correctly */
+}

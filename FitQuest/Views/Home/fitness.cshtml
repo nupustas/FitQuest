@@ -1,10 +1,121 @@
 <!DOCTYPE html>
-<head> 
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness</title>
+    <link rel="stylesheet" type="text/css" href="~/css/fitness.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fontawesome-free@6.6.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
-<html>
-    <head>
-        <title>Fitness</title>
-        <h1> Fitness</h1>
-    </head>
+<body>
+    <nav>
+        <a href="/home/index"><img src="~/images/words_logo.png" alt="Logo"></a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="/home/Index">HOME</a></li>
+                <li><a href="/home/Fitness">FITNESS</a></li>
+                <li><a href="/home/Nutrition">NUTRITION</a></li>
+                <li><a href="/home/Progress">PROGRESS</a></li>
+                <li><a href="/home/Recipes">RECIPES</a></li>
+                @if (Context.Session.GetString("Username") != null)
+                {
+                    <li><a href="/home/profile" class="user-button">@Context.Session.GetString("Username")</a></li>
+                    <li><a href="/home/Logout">LOGOUT</a></li>
+                }
+                else
+                {
+                    <li><a href="/home/Login" class="user-button">SIGN IN / SIGN UP</a></li>
+                }
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+
+    <section class="planner">
+        <h1>WORKOUT PLAN</h1>
+
+        <!-- Display AI-Generated Workout Plan -->
+        @if (ViewBag.WorkoutPlan != null)
+        {
+            <div class="workout-plan">
+                <h2>Your AI-Generated Workout Plan</h2>
+                <pre class="plan-content">@ViewBag.WorkoutPlan</pre>
+            </div>
+        }
+        else
+        {
+            <div class="info-message">
+                <p>No workout plan available. Click the button below to generate a new plan!</p>
+            </div>
+        }
+
+        <!-- Button to Generate Workout Plan -->
+        <form method="post" action="/Workout/GenerateWorkoutPlan" class="generate-plan-form">
+            <button type="submit" class="generate-plan-button">Generate Workout Plan</button>
+        </form>
+
+        <div class="row-1">
+            <div class="collumn">
+                <h2>MON</h2>
+            </div>
+            <div class="collumn">
+                <h2>TUE</h2>
+            </div>
+            <div class="collumn">
+                <h2>WED</h2>
+            </div>
+            <div class="collumn">
+                <h2>THU</h2>
+            </div>
+            <div class="collumn">
+                <h2>FRI</h2>
+            </div>
+            <div class="collumn">
+                <h2>SAT</h2>
+            </div>
+            <div class="collumn">
+                <h2>SUN</h2>
+            </div>
+        </div>
+        <div class="row-2">
+            <div class="collumn-2"></div>
+            <div class="collumn-2"></div>
+            <div class="collumn-2"></div>
+            <div class="collumn-2"></div>
+            <div class="collumn-2"></div>
+            <div class="collumn-2"></div>
+            <div class="collumn-2"></div>
+        </div>
+        <button class="edit_plan">Edit plan</button>
+    </section>
+
+    <section class="meal-log">
+        <h1>LOGGED FOODS TODAY</h1>
+        <div class="row-3">
+            <div class="collumn-3"></div>
+            <div class="collumn-4">
+                <h2>CALORIES</h2>
+            </div>
+        </div>
+        <div class="row-4">
+            <div class="collumn-5"></div>
+            <div class="collumn-6"></div>
+        </div>
+    </section>
+
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+    </script>
+</body>
 </html>

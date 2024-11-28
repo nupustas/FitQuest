@@ -1,10 +1,246 @@
 <!DOCTYPE html>
-<head> 
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="~/css/recipes_style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@@fortawesome/fontawesome-free@6.6.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<title>Recipes</title>
 </head>
-<html>
-    <head>
-        <title>Recipes</title>
-        <h1> Recipes</h1>
-    </head>
+<header>
+    <nav>
+        <a href="index.html"> <img src="~/images/words_logo.png"> </a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()" ></i>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="fitness.html">FITNESS</a></li>
+                <li><a href="">NUTRITION</a></li>
+                <li><a href="progress.html">PROGRESS</a></li>
+                <li><a href="recipes.html">RECIPES</a></li>
+                <li><a href="blog.html">BLOG</a></li>
+                <li><a href="login.html">SIGN UP/SIGN IN</a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+</header>
+<body>
+    <section class="diet" id="diet">
+        <h1 class="heading">Diet plan</h1>
+
+        <ul class="controls">
+            <li class="buttons active" data-filter="all">
+                <img src="~/images/all-icon.svg" alt="">
+                <h3>all</h3>
+            </li>
+            <li class="buttons" data-filter="breakfast">
+                <img src="~/images/breakfast-icon.png" alt="">
+                <h3>breakfast</h3>
+            </li>
+            <li class="buttons" data-filter="lunch">
+                <img src="~/images/lunch-icon.png" alt="">
+                <h3>lunch</h3>
+            </li>
+            <li class="buttons" data-filter="dinner">
+                <img src="~/images/dinner-icon.png" alt="">
+                <h3>dinner</h3>
+            </li>
+        </ul>
+        <div class="add_new">
+            <button class="add_new_button" ><i class="bi bi-plus-circle"></i>Add new recipe</button>
+        </div>
+
+
+    <div class="image-container">
+
+        <div class="box lunch">
+            <div class="image">
+                <img src="images/diet/diet-1.jpeg" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="link">Lorem ipsum dolor sit amet consectetur</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id ut voluptatibus aperiam velit, quos perferendis laborum deleniti natus.</p>
+                <div class="icon">
+                    <a href="#"><i class="fas fa-clock"></i>November 1, 2024</a>
+                    <a href="#"><i class="fas fa-user"></i>by admin</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="box breakfast">
+            <div class="image">
+                <img src="images/diet/diet-10.jpg" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="link">Lorem ipsum dolor sit amet consectetur</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id ut voluptatibus aperiam velit, quos perferendis laborum deleniti natus.</p>
+                <div class="icon">
+                    <a href="#"><i class="fas fa-clock"></i>November 1, 2024</a>
+                    <a href="#"><i class="fas fa-user"></i>by admin</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="box breakfast">
+            <div class="image">
+                <img src="images/diet/diet-9.jpg" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="link">Lorem ipsum dolor sit amet consectetur</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id ut voluptatibus aperiam velit, quos perferendis laborum deleniti natus.</p>
+                <div class="icon">
+                    <a href="#"><i class="fas fa-clock"></i>November 1, 2024</a>
+                    <a href="#"><i class="fas fa-user"></i>by admin</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="box breakfast">
+            <div class="image">
+                <img src="images/diet/diet-8.webp" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="link">Lorem ipsum dolor sit amet consectetur</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id ut voluptatibus aperiam velit, quos perferendis laborum deleniti natus.</p>
+                <div class="icon">
+                    <a href="#"><i class="fas fa-clock"></i>November 1, 2024</a>
+                    <a href="#"><i class="fas fa-user"></i>by admin</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="box lunch">
+            <div class="image">
+                <img src="images/diet/diet-5.jpg" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="link">Lorem ipsum dolor sit amet consectetur</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id ut voluptatibus aperiam velit, quos perferendis laborum deleniti natus.</p>
+                <div class="icon">
+                    <a href="#"><i class="fas fa-clock"></i>November 1, 2024</a>
+                    <a href="#"><i class="fas fa-user"></i>by admin</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="box dinner">
+            <div class="image">
+                <img src="images/diet/diet-6.jpg" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="link">Lorem ipsum dolor sit amet consectetur</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id ut voluptatibus aperiam velit, quos perferendis laborum deleniti natus.</p>
+                <div class="icon">
+                    <a href="#"><i class="fas fa-clock"></i>November 1, 2024</a>
+                    <a href="#"><i class="fas fa-user"></i>by admin</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="box dinner">
+            <div class="image">
+                <img src="images/diet/diet-7.jpg" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="link">Lorem ipsum dolor sit amet consectetur</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id ut voluptatibus aperiam velit, quos perferendis laborum deleniti natus.</p>
+                <div class="icon">
+                    <a href="#"><i class="fas fa-clock"></i>November 1, 2024</a>
+                    <a href="#"><i class="fas fa-user"></i>by admin</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="box  dinner">
+            <div class="image">
+                <img src="images/diet/diet-2.jpg" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="link">Lorem ipsum dolor sit amet consectetur</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id ut voluptatibus aperiam velit, quos perferendis laborum deleniti natus.</p>
+                <div class="icon">
+                    <a href="#"><i class="fas fa-clock"></i>November 1, 2024</a>
+                    <a href="#"><i class="fas fa-user"></i>by admin</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </section>
+
+    <div id="recipeModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New Recipe</h2>
+            <form id="recipeForm">
+                <label for="recipeName">Recipe Name:</label>
+                <input type="text" id="recipeName" name="recipeName" required>
+                
+                <label for="ingredients">Ingredients:</label>
+                <textarea id="ingredients" name="ingredients" rows="4" required></textarea>
+                
+                <label for="instructions">Instructions:</label>
+                <textarea id="instructions" name="instructions" rows="4" required></textarea>
+                
+                <button type="submit">Submit Recipe</button>
+            </form>
+        </div>
+    </div>
+    
+
+
+
+
+
+
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+        $(document).ready(function(){
+            $('.buttons').click(function(){
+                $(this).addClass('active').siblings().removeClass('active');
+
+                var filter =  $(this).attr('data-filter');
+                if(filter == 'all'){
+                    $('.diet .box').show(400);
+                }
+                else{
+                    $('.diet .box').not('.'+filter).hide(200);
+                    $('.diet .box').filter('.'+filter).show(400);
+                }
+            });
+            
+        });
+        $(document).ready(function(){
+    var modal = document.getElementById("recipeModal"); // Correct modal ID
+    var btn = document.querySelector(".add_new_button"); // Use class selector
+    var span = document.getElementsByClassName("close")[0];
+
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+});
+    </script>
+</body>
 </html>

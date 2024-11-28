@@ -1,67 +1,67 @@
-<!DOCTYPE html>
-<head> 
+@using FitQuest.Models
+@model UserData
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Profile</title>
 </head>
 <body>
-   
     @{
         var userID = Context.Session.GetInt32("UserId");
-        if (userID==null)
-    {
-        <h1>Log in to get workout plans</h1>
+        if (userID == null)
+        {
+            <h1>Log in to get workout plans</h1>
+        }
+        else
+        {
+            var username = Context.Session.GetString("Username");
+            <h2>Hi @username, </h2>
+            
+
+            <form method="post" action="/UserProfile/SaveProfile">
+                <div>
+                    <label>Age:</label>
+                    <input type="number" name="Age" min="0" required />
+                </div>
+
+                <div>
+                    <label>Height (cm):</label>
+                    <input type="number" name="Height" min="0" required />
+                </div>
+
+                <div>
+                    <label>Weight (kg):</label>
+                    <input type="number" name="Weight" min="0" required />
+                </div>
+
+                <div>
+                    <label>Goals:</label>
+                    <select name="Goals" required>
+                        <option value="">Select Goal</option>
+                        <option value="lose weight">Lose Weight</option>
+                        <option value="gain weight">Gain Weight</option>
+                        <option value="maintain weight">Maintain Weight</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Workout Frequency (days/week):</label>
+                    <input type="number" name="WorkoutFrequency" min="0" max="7" required />
+                </div>
+
+                <div>
+                    <label>Gender:</label>
+                    <select name="Gender" required>
+                        <option value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <!-- Additional options can be added if necessary -->
+                    </select>
+                </div>
+                <button type="submit">Save</button>
+            </form>
+        }
     }
-    else
-    {
-    
-        var username = Context.Session.GetString("Username");
-        
-        <h1>Hi @username, </h1>
-
-        <form method="post" action="/UserProfile/SaveProfile">
-
-        <div>
-            <label>Age:</label>
-            <input type="number" name="Age" min="0" required />
-        </div>
-
-        <div>
-            <label>Height (cm):</label>
-            <input type="number" name="Height" min="0" required /> <!-- Corrected 'namer' to 'name' -->
-        </div>
-
-        <div>
-            <label>Weight (kg):</label>
-            <input type="number" name="Weight" min="0" required />
-        </div>
-
-        <div>
-            <label>Goals:</label>
-            <select name="Goals" required>
-                <option value="lose weight">Lose Weight</option>
-                <option value="gain weight">Gain Weight</option>
-                <option value="maintain weight">Maintain Weight</option>
-            </select>
-        </div>
-
-        <div>
-            <label>Workout Frequency (days/week):</label>
-            <input type="number" name="WorkoutFrequency" min="0" max="7" required />
-        </div>
-
-         <div>
-            <label>Gender:</label>
-            <select name="Gender" required>
-                <option value="">Select Gender</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-                <!-- Additional options can be added if necessary -->
-            </select>
-        </div>
-
-        <button type="submit">Save</button>
-    </form>
-    }
-}
-
-
 </body>
+</html>

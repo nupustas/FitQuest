@@ -9,13 +9,20 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"), new MySqlServerVersion(new Version(8, 0, 21))));
 
+// Configure GroqCloud AI settings and register the GroqCloudAIService
+builder.Services.Configure<GroqCloudAIConfig>(builder.Configuration.GetSection("GroqCloudAI"));
+builder.Services.AddHttpClient<GroqCloudAIService>(); // Register GroqCloudAIService with HttpClient
+
+
+
 // Add session services
-builder.Services.AddDistributedMemoryCache(); // Use in-memory caching
+builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
 {
-    options.IdleTimeout = TimeSpan.FromMinutes(30); // Set session timeout
-    options.Cookie.HttpOnly = true; // Prevent JavaScript access to the session cookie
-    options.Cookie.IsEssential = true; // Make the cookie essential
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+    options.Cookie.SameSite = SameSiteMode.Strict; // Optional: Adds stricter cookie policy
 });
 
 builder.Services.AddControllersWithViews();
@@ -67,7 +74,8 @@ app.UseCors("AllowAllOrigins");
 
 app.UseSession();
 
-app.UseAuthorization();
+// Comment this out if not using authentication
+// app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
