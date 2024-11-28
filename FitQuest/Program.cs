@@ -81,7 +81,4 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-
-app.MapControllers(); // Ensure this line is present to map controller routes
-
 app.Run();

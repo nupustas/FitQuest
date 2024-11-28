@@ -1,7 +1,6 @@
 {
   "Files": [
     {
-<<<<<<< HEAD
       "Id": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\FitQuest\\wwwroot\\css\\fitness.css",
       "PackagePath": "staticwebassets\\css\\fitness.css"
     },
@@ -55,53 +54,6 @@
     },
     {
       "Id": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\FitQuest\\wwwroot\\images\\words_logo.png",
-=======
-      "Id": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\css\\login.css",
-      "PackagePath": "staticwebassets\\css\\login.css"
-    },
-    {
-      "Id": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\css\\maindesign.css",
-      "PackagePath": "staticwebassets\\css\\maindesign.css"
-    },
-    {
-      "Id": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\css\\site.css",
-      "PackagePath": "staticwebassets\\css\\site.css"
-    },
-    {
-      "Id": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\images\\blog-1.jpg",
-      "PackagePath": "staticwebassets\\images\\blog-1.jpg"
-    },
-    {
-      "Id": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\images\\blog-2.jpg",
-      "PackagePath": "staticwebassets\\images\\blog-2.jpg"
-    },
-    {
-      "Id": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\images\\blog-3.jpg",
-      "PackagePath": "staticwebassets\\images\\blog-3.jpg"
-    },
-    {
-      "Id": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\images\\gym_background.jpg",
-      "PackagePath": "staticwebassets\\images\\gym_background.jpg"
-    },
-    {
-      "Id": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\images\\login_back.jpg",
-      "PackagePath": "staticwebassets\\images\\login_back.jpg"
-    },
-    {
-      "Id": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\images\\logo.png",
-      "PackagePath": "staticwebassets\\images\\logo.png"
-    },
-    {
-      "Id": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\images\\logo_flower.png",
-      "PackagePath": "staticwebassets\\images\\logo_flower.png"
-    },
-    {
-      "Id": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\images\\team.jpg",
-      "PackagePath": "staticwebassets\\images\\team.jpg"
-    },
-    {
-      "Id": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest\\FitQuest\\wwwroot\\images\\words_logo.png",
->>>>>>> 2c0d9cd85544e779f5784658f7e683c1bc29d1b0
       "PackagePath": "staticwebassets\\images\\words_logo.png"
     },
     {

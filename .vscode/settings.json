@@ -14,20 +14,6 @@
             "database": "fitquest",
             "username": "andriuha",
             "password": "Sportininkas1!"
-        },
-        {
-            "mysqlOptions": {
-                "authProtocol": "default",
-                "enableSsl": "Disabled"
-            },
-            "previewLimit": 50,
-            "server": "34.89.223.194",
-            "port": 3306,
-            "driver": "MySQL",
-            "name": "test2",
-            "database": "fitquest",
-            "username": "andriuha",
-            "password": "Sportininkas1Ą"
         }
     ]
 }
