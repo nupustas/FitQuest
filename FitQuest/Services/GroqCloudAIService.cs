@@ -36,7 +36,7 @@ public class GroqCloudAIService
 
     public async Task<string> GenerateWorkoutPlan(UserData userData)
 {
-    var prompt = $"Generate a workout plan for a user with the following details:\n" +
+    var prompt = $"Generate a workout plan (do not include leg or cardio days) for a user with the following details:\n" +
                  $"- Age: {userData.Age}\n" +
                  $"- Height: {userData.Height} cm\n" +
                  $"- Weight: {userData.Weight} kg\n" +

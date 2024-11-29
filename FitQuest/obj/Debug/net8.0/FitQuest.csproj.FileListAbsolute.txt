@@ -1092,3 +1092,4 @@ C:\Users\vejas\OneDrive\Desktop\aaaaaaaaa\FitQuest\FitQuest\obj\Debug\net8.0\ref
 C:\Users\vejas\OneDrive\Desktop\aaaaaaaaa\FitQuest\FitQuest\obj\Debug\net8.0\FitQuest.pdb
 C:\Users\vejas\OneDrive\Desktop\aaaaaaaaa\FitQuest\FitQuest\obj\Debug\net8.0\FitQuest.genruntimeconfig.cache
 C:\Users\vejas\OneDrive\Desktop\aaaaaaaaa\FitQuest\FitQuest\obj\Debug\net8.0\ref\FitQuest.dll
+C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\Azure.AI.OpenAI.dll
