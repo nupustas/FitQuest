@@ -1,0 +1,20 @@
+body{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	font-family: 'Jost', sans-serif;
+	background-image: url("../images/login_back.jpg");
+    background-size: cover; 
+  background-position: center; 
+  position: relative;
+  background-repeat: no-repeat; 
+}
+h2{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+    color: #fff;
+}

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "T8/TtjMPNgZQ+lOeTrbRyRRpfyLbLuaGv5ntJ/BOFhg=",
+  "Hash": "f3p9rdhEPzDYjczMYOwy+JpeC3VTnKxUHkbxL8A0nYA=",
   "Source": "FitQuest",
   "BasePath": "_content/FitQuest",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\recipes_style.css"
+    },
+    {
+      "Identity": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\css\\resetrequest.css",
+      "SourceId": "FitQuest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\",
+      "BasePath": "_content/FitQuest",
+      "RelativePath": "css/resetrequest.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\resetrequest.css"
     },
     {
       "Identity": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\css\\site.css",

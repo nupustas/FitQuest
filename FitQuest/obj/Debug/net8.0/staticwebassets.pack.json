@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\css\\recipes_style.css"
     },
     {
+      "Id": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\css\\resetrequest.css",
+      "PackagePath": "staticwebassets\\css\\resetrequest.css"
+    },
+    {
       "Id": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
