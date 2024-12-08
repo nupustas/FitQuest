@@ -2,18 +2,51 @@ using FitQuest.Data;
 using FitQuest.Models;
 using FitQuest.Services;
 using Microsoft.EntityFrameworkCore;
+using MySqlConnector;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"), new MySqlServerVersion(new Version(8, 0, 21))));
+{
+    var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+    var connection = new MySqlConnectionStringBuilder(connectionString)
+    {
+        SslMode = MySqlSslMode.Required,
+        SslCa = "certs/server-ca.pem",
+        SslCert = "certs/client-cert.pem",
+        SslKey = "certs/client-key.pem"
+    };
+    options.UseMySql(connection.ConnectionString, new MySqlServerVersion(new Version(8, 0, 21)));
+});
+
+// Test the database connection
+TestDatabaseConnection(builder.Configuration.GetConnectionString("DefaultConnection"));
+
+void TestDatabaseConnection(string connectionString)
+{
+    try
+    {
+        var connection = new MySqlConnectionStringBuilder(connectionString)
+        {
+            SslMode = MySqlSslMode.Required,
+            SslCa = "certs/server-ca.pem",
+            SslCert = "certs/client-cert.pem",
+            SslKey = "certs/client-key.pem"
+        };
+        using var conn = new MySqlConnection(connection.ConnectionString);
+        conn.Open();
+        Console.WriteLine("Database connection successful.");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Database connection failed: {ex.Message}");
+    }
+}
 
 // Configure GroqCloud AI settings and register the GroqCloudAIService
 builder.Services.Configure<GroqCloudAIConfig>(builder.Configuration.GetSection("GroqCloudAI"));
 builder.Services.AddHttpClient<GroqCloudAIService>(); // Register GroqCloudAIService with HttpClient
-
-
 
 // Add session services
 builder.Services.AddDistributedMemoryCache();
