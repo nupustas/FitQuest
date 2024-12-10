@@ -26,5 +26,13 @@ namespace FitQuest.Models
 
         [Required]
         public string Gender { get; set; }
+
+        public string? MondayWorkout { get; set; }
+        public string? TuesdayWorkout { get; set; }
+        public string? WednesdayWorkout { get; set; }
+        public string? ThursdayWorkout { get; set; }
+        public string? FridayWorkout { get; set; }
+        public string? SaturdayWorkout { get; set; }
+        public string? SundayWorkout { get; set; }
     }
 }

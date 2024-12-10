@@ -39,22 +39,20 @@
     <section class="planner">
         <h1>WORKOUT PLAN</h1>
 
-        <!-- Display AI-Generated Workout Plan -->
-        @if (ViewBag.WorkoutPlan != null)
+        <!-- Display AI-Generated Workout Plan if available in the database -->
+        @if (ViewBag.Error != null)
         {
-            <div class="workout-plan">
-                <h2>Your AI-Generated Workout Plan</h2>
-                <pre class="plan-content">@ViewBag.WorkoutPlan</pre>
+            <div class="error-message">
+                <p>@ViewBag.Error</p>
             </div>
         }
         else
         {
-            <div class="info-message">
-                <p>No workout plan available. Click the button below to generate a new plan!</p>
+            <div class="workout-plan">
+                <h2>Your AI-Generated Workout Plan</h2>
             </div>
         }
 
-        <!-- Button to Generate Workout Plan -->
         <form method="post" action="/Workout/GenerateWorkoutPlan" class="generate-plan-form">
             <button type="submit" class="generate-plan-button">Generate Workout Plan</button>
         </form>
@@ -62,35 +60,34 @@
         <div class="row-1">
             <div class="collumn">
                 <h2>MON</h2>
+                <p>@ViewBag.MondayWorkout</p>
             </div>
             <div class="collumn">
                 <h2>TUE</h2>
+                <p>@ViewBag.TuesdayWorkout</p>
             </div>
             <div class="collumn">
                 <h2>WED</h2>
+                <p>@ViewBag.WednesdayWorkout</p>
             </div>
             <div class="collumn">
                 <h2>THU</h2>
+                <p>@ViewBag.ThursdayWorkout</p>
             </div>
             <div class="collumn">
                 <h2>FRI</h2>
+                <p>@ViewBag.FridayWorkout</p>
             </div>
             <div class="collumn">
                 <h2>SAT</h2>
+                <p>@ViewBag.SaturdayWorkout</p>
             </div>
             <div class="collumn">
                 <h2>SUN</h2>
+                <p>@ViewBag.SundayWorkout</p>
             </div>
         </div>
-        <div class="row-2">
-            <div class="collumn-2"></div>
-            <div class="collumn-2"></div>
-            <div class="collumn-2"></div>
-            <div class="collumn-2"></div>
-            <div class="collumn-2"></div>
-            <div class="collumn-2"></div>
-            <div class="collumn-2"></div>
-        </div>
+
         <button class="edit_plan">Edit plan</button>
     </section>
 

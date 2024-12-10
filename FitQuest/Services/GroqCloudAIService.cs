@@ -1,11 +1,12 @@
 using System;
-using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using FitQuest.Models;
 
 public class GroqCloudAIService
 {
@@ -15,85 +16,77 @@ public class GroqCloudAIService
     private readonly ILogger<GroqCloudAIService> _logger;
 
     public GroqCloudAIService(HttpClient httpClient, IConfiguration configuration, ILogger<GroqCloudAIService> logger)
-{
-    _httpClient = httpClient;
-    _logger = logger;
-
-    // Load API configuration
-    var groqConfig = configuration.GetSection("GroqCloudAI");
-    _apiKey = groqConfig["ApiKey"];
-    _endpoint = groqConfig["Endpoint"];
-
-    if (string.IsNullOrEmpty(_apiKey) || string.IsNullOrEmpty(_endpoint))
     {
-        throw new InvalidOperationException("GroqCloud AI API key or endpoint is not configured.");
+        _httpClient = httpClient;
+        _logger = logger;
+
+        // Load API configuration
+        var groqConfig = configuration.GetSection("GroqCloudAI");
+        _apiKey = groqConfig["ApiKey"];
+        _endpoint = groqConfig["Endpoint"];
+
+        if (string.IsNullOrEmpty(_apiKey) || string.IsNullOrEmpty(_endpoint))
+        {
+            throw new InvalidOperationException("GroqCloud AI API key or endpoint is not configured.");
+        }
+
+        _httpClient.BaseAddress = new Uri(_endpoint);
+        _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {_apiKey}");
     }
-
-    _httpClient.BaseAddress = new Uri(_endpoint);
-    _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {_apiKey}");
-}
-
 
     public async Task<string> GenerateWorkoutPlan(UserData userData)
-{
-    var prompt = $"Generate a workout plan (do not include leg or cardio days) for a user with the following details:\n" +
-                 $"- Age: {userData.Age}\n" +
-                 $"- Height: {userData.Height} cm\n" +
-                 $"- Weight: {userData.Weight} kg\n" +
-                 $"- Goal: {userData.Goals}\n" +
-                 $"- Workout Frequency: {userData.WorkoutFrequency} times per week\n" +
-                 $"- Gender: {userData.Gender}\n";
-
-    var payload = new
     {
-        messages = new[]
+        var prompt = $"Generate a workout plan (do not include leg or cardio days) for a user with the following details:\n" +
+                     $"- Age: {userData.Age}\n" +
+                     $"- Height: {userData.Height} cm\n" +
+                     $"- Weight: {userData.Weight} kg\n" +
+                     $"- Goal: {userData.Goals}\n" +
+                     $"- Workout Frequency: {userData.WorkoutFrequency} times per week\n" +
+                     $"- Gender: {userData.Gender}\n";
+
+        var payload = new
         {
-            new { role = "user", content = prompt }
-        },
-        model = "llama3-8b-8192"
-    };
+            messages = new[] { new { role = "user", content = prompt } },
+            model = "llama3-8b-8192"
+        };
 
-    string jsonPayload = JsonSerializer.Serialize(payload);
+        string jsonPayload = JsonSerializer.Serialize(payload);
+        var content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
 
-    var content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
-
-    try
-    {
-        var response = await _httpClient.PostAsync("", content);
-
-        if (response.IsSuccessStatusCode)
+        try
         {
-            var responseContent = await response.Content.ReadAsStringAsync();
-            _logger.LogInformation("Raw Response Content: {ResponseContent}", responseContent);
+            var response = await _httpClient.PostAsync("", content);
 
-            var options = new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
-            var groqResponse = JsonSerializer.Deserialize<GroqCloudResponse>(responseContent, options);
-
-            // Extract the workout plan content
-            var workoutPlan = groqResponse?.Choices?.FirstOrDefault()?.Message?.Content;
-
-            if (!string.IsNullOrEmpty(workoutPlan))
+            if (response.IsSuccessStatusCode)
             {
-                return workoutPlan;
+                var responseContent = await response.Content.ReadAsStringAsync();
+                _logger.LogInformation("Raw Response Content: {ResponseContent}", responseContent);
+
+                var options = new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
+                var groqResponse = JsonSerializer.Deserialize<GroqCloudResponse>(responseContent, options);
+
+                var workoutPlan = groqResponse?.Choices?.FirstOrDefault()?.Message?.Content;
+
+                if (!string.IsNullOrEmpty(workoutPlan))
+                {
+                    return workoutPlan;
+                }
+
+                return "The AI did not generate a valid workout plan. Please try again.";
             }
-
-            return "The AI did not generate a valid workout plan. Please try again.";
+            else
+            {
+                var errorContent = await response.Content.ReadAsStringAsync();
+                _logger.LogError("Error Response: {ErrorContent}", errorContent);
+                throw new Exception($"API error: {response.StatusCode}, {errorContent}");
+            }
         }
-        else
+        catch (Exception ex)
         {
-            var errorContent = await response.Content.ReadAsStringAsync();
-            _logger.LogError("Error Response: {ErrorContent}", errorContent);
-            throw new Exception($"API error: {response.StatusCode}, {errorContent}");
+            _logger.LogError("An error occurred: {Message}", ex.Message);
+            throw;
         }
     }
-    catch (Exception ex)
-    {
-        _logger.LogError("An error occurred: {Message}", ex.Message);
-        throw;
-    }
-}
-
-
 }
 
 public class GroqCloudResponse
@@ -103,7 +96,7 @@ public class GroqCloudResponse
     public long Created { get; set; }
     public string Model { get; set; }
     public List<Choice> Choices { get; set; }
-    public ResponseUsage Usage { get; set; } // Renamed
+    public ResponseUsage Usage { get; set; }
 
     public class Choice
     {
@@ -118,7 +111,7 @@ public class GroqCloudResponse
         public string Content { get; set; }
     }
 
-    public class ResponseUsage // Renamed from 'Usage'
+    public class ResponseUsage
     {
         public double QueueTime { get; set; }
         public int PromptTokens { get; set; }
@@ -128,18 +121,4 @@ public class GroqCloudResponse
         public int TotalTokens { get; set; }
         public double TotalTime { get; set; }
     }
-}
-
-
-
-public class UserData
-{
-    [Key]
-    public int UserId { get; set; }
-    public int Age { get; set; }
-    public int Height { get; set; }
-    public int Weight { get; set; }
-    public string Goals { get; set; }
-    public int WorkoutFrequency { get; set; }
-    public string Gender { get; set; }
 }
