@@ -22,7 +22,7 @@
                 <li><a href="/home/progress">PROGRESS</a></li>
                 <li><a href="/home/recipes">RECIPES</a></li>
                 @{
-                        var username = Context.Session.GetString("Username");
+                        var username = Context.Session.GetString("Username").ToUpper();
                         if (!string.IsNullOrEmpty(username))
                         {
                             <!-- Display the user's name if they are logged in -->

@@ -6,15 +6,54 @@ body{
 	align-items: center;
 	min-height: 100vh;
 	font-family: 'Jost', sans-serif;
-	background-image: url("../images/login_back.jpg");
+	background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("../images/login_back.jpg");
     background-size: cover; 
   background-position: center; 
   position: relative;
   background-repeat: no-repeat; 
 }
-h2{
+h3{
     text-align: center;
     font-weight: 600;
     margin: 10px 0;
     color: #fff;
+}
+h4{
+  text-align: center;
+  font-weight: 400;
+  margin: 10px 0;
+  color: #fff;
+}
+.form-group {
+  position: relative; 
+  max-width: 90vw; 
+  max-height: 90vh; 
+  margin: auto; 
+  padding: 20px; 
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 8px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+  flex-direction: column; 
+    gap: 10px; 
+}
+input {
+    width: 100%; /* Make input and button take the full width */
+    
+}
+button{
+  width: 60%;
+	height: 40px;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	color: #fff;
+	background:  #891810;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 10px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
 }

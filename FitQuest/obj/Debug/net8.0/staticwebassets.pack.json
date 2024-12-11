@@ -1,79 +1,79 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\css\\fitness.css",
-      "PackagePath": "staticwebassets\\css\\fitness.css"
+      "Id": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/css/fitness.css",
+      "PackagePath": "staticwebassets/css/fitness.css"
     },
     {
-      "Id": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\css\\login.css",
-      "PackagePath": "staticwebassets\\css\\login.css"
+      "Id": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/css/login.css",
+      "PackagePath": "staticwebassets/css/login.css"
     },
     {
-      "Id": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\css\\maindesign.css",
-      "PackagePath": "staticwebassets\\css\\maindesign.css"
+      "Id": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/css/maindesign.css",
+      "PackagePath": "staticwebassets/css/maindesign.css"
     },
     {
-      "Id": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\css\\recipes_style.css",
-      "PackagePath": "staticwebassets\\css\\recipes_style.css"
+      "Id": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/css/recipes_style.css",
+      "PackagePath": "staticwebassets/css/recipes_style.css"
     },
     {
-      "Id": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\css\\resetrequest.css",
-      "PackagePath": "staticwebassets\\css\\resetrequest.css"
+      "Id": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/css/resetrequest.css",
+      "PackagePath": "staticwebassets/css/resetrequest.css"
     },
     {
-      "Id": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\css\\site.css",
-      "PackagePath": "staticwebassets\\css\\site.css"
+      "Id": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/css/site.css",
+      "PackagePath": "staticwebassets/css/site.css"
     },
     {
-      "Id": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\images\\blog-1.jpg",
-      "PackagePath": "staticwebassets\\images\\blog-1.jpg"
+      "Id": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/images/blog-1.jpg",
+      "PackagePath": "staticwebassets/images/blog-1.jpg"
     },
     {
-      "Id": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\images\\blog-2.jpg",
-      "PackagePath": "staticwebassets\\images\\blog-2.jpg"
+      "Id": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/images/blog-2.jpg",
+      "PackagePath": "staticwebassets/images/blog-2.jpg"
     },
     {
-      "Id": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\images\\blog-3.jpg",
-      "PackagePath": "staticwebassets\\images\\blog-3.jpg"
+      "Id": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/images/blog-3.jpg",
+      "PackagePath": "staticwebassets/images/blog-3.jpg"
     },
     {
-      "Id": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\images\\gym_background.jpg",
-      "PackagePath": "staticwebassets\\images\\gym_background.jpg"
+      "Id": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/images/gym_background.jpg",
+      "PackagePath": "staticwebassets/images/gym_background.jpg"
     },
     {
-      "Id": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\images\\login_back.jpg",
-      "PackagePath": "staticwebassets\\images\\login_back.jpg"
+      "Id": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/images/login_back.jpg",
+      "PackagePath": "staticwebassets/images/login_back.jpg"
     },
     {
-      "Id": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\images\\logo.png",
-      "PackagePath": "staticwebassets\\images\\logo.png"
+      "Id": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/images/logo.png",
+      "PackagePath": "staticwebassets/images/logo.png"
     },
     {
-      "Id": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\images\\logo_flower.png",
-      "PackagePath": "staticwebassets\\images\\logo_flower.png"
+      "Id": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/images/logo_flower.png",
+      "PackagePath": "staticwebassets/images/logo_flower.png"
     },
     {
-      "Id": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\images\\team.jpg",
-      "PackagePath": "staticwebassets\\images\\team.jpg"
+      "Id": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/images/team.jpg",
+      "PackagePath": "staticwebassets/images/team.jpg"
     },
     {
-      "Id": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\images\\words_logo.png",
-      "PackagePath": "staticwebassets\\images\\words_logo.png"
+      "Id": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/images/words_logo.png",
+      "PackagePath": "staticwebassets/images/words_logo.png"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.FitQuest.Microsoft.AspNetCore.StaticWebAssets.props",
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.FitQuest.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.FitQuest.props",
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.FitQuest.props",
       "PackagePath": "build\\FitQuest.props"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.FitQuest.props",
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.FitQuest.props",
       "PackagePath": "buildMultiTargeting\\FitQuest.props"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.FitQuest.props",
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.FitQuest.props",
       "PackagePath": "buildTransitive\\FitQuest.props"
     }
   ],
