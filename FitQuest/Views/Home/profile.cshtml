@@ -1,67 +1,169 @@
 @using FitQuest.Models
-@model UserData
+@model FitQuest.Models.UserData
+
 
 <!DOCTYPE html>
 <html>
 <head>
     <title>User Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .profile-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .profile-info, .update-form {
+            width: 48%;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .profile-info {
+            border-right: 2px solid #ccc;
+        }
+
+        h1, h2, h3 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 8px 0;
+        }
+
+        .form-container div {
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .no-data {
+            color: #f00;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
+
     @{
-        var userID = Context.Session.GetInt32("UserId");
-        if (userID == null)
+        var userId = Context.Session.GetInt32("UserId");
+        var username = Context.Session.GetString("Username");
+
+        if (userId == null)
         {
-            <h1>Log in to get workout plans</h1>
+            <h1>Log in to view and update your profile</h1>
         }
         else
         {
-            var username = Context.Session.GetString("Username");
-            <h2>Hi @username, </h2>
-            
+            <div class="profile-container">
+                <!-- Left side: Display user data -->
+                <div class="profile-info">
+                    <h2>Hi @username!</h2>
+                    <h3>Your Current Profile Data:</h3>
 
-            <form method="post" action="/UserProfile/SaveProfile">
-                <div>
-                    <label>Age:</label>
-                    <input type="number" name="Age" min="0" required />
+                    @if (Model != null && Model.UserId > 0)
+                {
+                    <ul>
+                        <li><strong>Age:</strong> @Model.Age</li>
+                        <li><strong>Height:</strong> @Model.Height cm</li>
+                        <li><strong>Weight:</strong> @Model.Weight kg</li>
+                        <li><strong>Goals:</strong> @Model.Goals</li>
+                        <li><strong>Workout Frequency:</strong> @Model.WorkoutFrequency days/week</li>
+                        <li><strong>Gender:</strong> @Model.Gender</li>
+                    </ul>
+                }
+                else
+                {
+                    <p>No profile data found. Please update your profile.</p>
+                }
+
                 </div>
 
-                <div>
-                    <label>Height (cm):</label>
-                    <input type="number" name="Height" min="0" required />
-                </div>
+                <!-- Right side: Form to update user data -->
+                <div class="update-form">
+                    <h3>Update Your Info</h3>
+                    <form method="post" action="/UserProfile/SaveProfile">
+                        <div>
+                            <label>Age:</label>
+                            <input type="number" name="Age" value="@Model?.Age" min="0" required />
+                        </div>
 
-                <div>
-                    <label>Weight (kg):</label>
-                    <input type="number" name="Weight" min="0" required />
-                </div>
+                        <div>
+                            <label>Height (cm):</label>
+                            <input type="number" name="Height" value="@Model?.Height" min="0" required />
+                        </div>
 
-                <div>
-                    <label>Goals:</label>
-                    <select name="Goals" required>
-                        <option value="">Select Goal</option>
-                        <option value="lose weight">Lose Weight</option>
-                        <option value="gain weight">Gain Weight</option>
-                        <option value="maintain weight">Maintain Weight</option>
-                    </select>
-                </div>
+                        <div>
+                            <label>Weight (kg):</label>
+                            <input type="number" name="Weight" value="@Model?.Weight" min="0" required />
+                        </div>
 
-                <div>
-                    <label>Workout Frequency (days/week):</label>
-                    <input type="number" name="WorkoutFrequency" min="0" max="7" required />
-                </div>
+                        <div>
+                            <label>Goals:</label>
+                            <select name="Goals" required>
+                                <option value="">Select Goal</option>
+                                <option value="lose weight" @(Model?.Goals == "lose weight" ? "selected" : "")>Lose Weight</option>
+                                <option value="gain weight" @(Model?.Goals == "gain weight" ? "selected" : "")>Gain Weight</option>
+                                <option value="maintain weight" @(Model?.Goals == "maintain weight" ? "selected" : "")>Maintain Weight</option>
+                            </select>
+                        </div>
 
-                <div>
-                    <label>Gender:</label>
-                    <select name="Gender" required>
-                        <option value="">Select Gender</option>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <!-- Additional options can be added if necessary -->
-                    </select>
+                        <div>
+                            <label>Workout Frequency (days/week):</label>
+                            <input type="number" name="WorkoutFrequency" value="@Model?.WorkoutFrequency" min="0" max="7" required />
+                        </div>
+
+                        <div>
+                            <label>Gender:</label>
+                            <select name="Gender" required>
+                                <option value="">Select Gender</option>
+                                <option value="Male" @(Model?.Gender == "Male" ? "selected" : "")>Male</option>
+                                <option value="Female" @(Model?.Gender == "Female" ? "selected" : "")>Female</option>
+                            </select>
+                        </div>
+
+                        <button type="submit">Save</button>
+                    </form>
                 </div>
-                <button type="submit">Save</button>
-            </form>
+            </div>
         }
     }
+
 </body>
 </html>
+x

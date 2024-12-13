@@ -1,10 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using FitQuest.Models;
 using FitQuest.Data;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
-using System.Linq;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore; // Import this for session handling
 
 namespace FitQuest.Controllers
@@ -18,11 +14,9 @@ namespace FitQuest.Controllers
             _context = context;
         }
 
-
         // Retrieve the UserId from the session
         private int GetUserId()
         {
-            // Retrieve the UserId from the session
             var userId = HttpContext.Session.GetInt32("UserId");
             if (userId.HasValue)
             {
@@ -32,58 +26,67 @@ namespace FitQuest.Controllers
             throw new Exception("User is not logged in.");
         }
 
-        // Save or update the profile information
-        [HttpPost]
-        public async Task<IActionResult> SaveProfile(UserData userData)
+        // Display the current profile 
+        
+        public async Task<IActionResult> Profile()
         {
+            var userId = GetUserId();
 
-            
-            if (ModelState.IsValid)
+            // Fetch the user's existing profile from the database
+            var userData = await _context.UserData.FirstOrDefaultAsync(u => u.UserId == userId);
+            Console.WriteLine($"Fetched UserData: Age={userData?.Age}, Height={userData?.Height}, Weight={userData?.Weight}, Goals={userData?.Goals}, Frequency={userData?.WorkoutFrequency}, Gender={userData?.Gender}");
+
+            if (userData == null)
             {
-                int userId = GetUserId(); 
-
-                // Check if the user already has profile data
-                var existingProfile = await _context.UserData.SingleOrDefaultAsync(u => u.UserId == userId);
-                if (existingProfile != null)
-                {
-                    // Update existing data
-                    existingProfile.Age = userData.Age;
-                    existingProfile.Height = userData.Height;
-                    existingProfile.Weight = userData.Weight;
-                    existingProfile.Goals = userData.Goals;
-                    existingProfile.WorkoutFrequency = userData.WorkoutFrequency;
-                    existingProfile.Gender = userData.Gender;
-
-                    // Save changes for the updated profile
-                    await _context.SaveChangesAsync();
-                }
-                else
-                {
-                    // Create new UserData and set UserId
-                    var newUserData = new UserData
-                    {
-                        UserId = userId, // Set UserId for the new entry
-                        Age = userData.Age,
-                        Height = userData.Height,
-                        Weight = userData.Weight,
-                        Goals = userData.Goals,
-                        WorkoutFrequency = userData.WorkoutFrequency,
-                        Gender = userData.Gender
-                    };
-
-                    _context.UserData.Add(newUserData); // Add new UserData entry
-                    await _context.SaveChangesAsync(); // Save changes to the database
-                }
-
-                return RedirectToAction("Profile", "Home");
+                // If no profile exists, create an empty model or show a message
+                userData = new UserData();
             }
 
-           
-
-            return RedirectToAction("Profile", "Home");
+            // Return the profile data to the view
+            return View(userData);
         }
 
-    
+        // Save or update the profile information (POST request)
+        [HttpPost]
+public async Task<IActionResult> SaveProfile(UserData userData)
+{
+    if (ModelState.IsValid)
+    {
+        int userId = GetUserId(); // Ensure this gets the correct user ID
+
+        // Check if user data already exists
+        var existingProfile = await _context.UserData.SingleOrDefaultAsync(u => u.UserId == userId);
+
+        if (existingProfile != null)
+        {
+            // Update existing profile
+            existingProfile.Age = userData.Age;
+            existingProfile.Height = userData.Height;
+            existingProfile.Weight = userData.Weight;
+            existingProfile.Goals = userData.Goals;
+            existingProfile.WorkoutFrequency = userData.WorkoutFrequency;
+            existingProfile.Gender = userData.Gender;
+
+            _context.UserData.Update(existingProfile);
+        }
+        else
+        {
+            // Insert new profile
+            userData.UserId = userId;
+            _context.UserData.Add(userData);
+        }
+
+        // Save changes
+        await _context.SaveChangesAsync();
+
+        // Redirect to the profile view
+        return RedirectToAction("Profile", "Home");
+    }
+
+            // Return to the profile view with errors if validation fails
+            return View("Profile", userData);
+        }
+
 
     }
 }

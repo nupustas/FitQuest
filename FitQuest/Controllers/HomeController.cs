@@ -58,9 +58,22 @@ namespace FitQuest.Controllers
             return View();
         }
 
-        public IActionResult Profile()
+        public async Task<IActionResult> Profile()
         {
-            return View();
+            var userId = HttpContext.Session.GetInt32("UserId");
+
+            // Fetch the user's existing profile from the database
+            var userData = await _context.UserData.FirstOrDefaultAsync(u => u.UserId == userId);
+            Console.WriteLine($"Fetched UserData: Age={userData?.Age}, Height={userData?.Height}, Weight={userData?.Weight}, Goals={userData?.Goals}, Frequency={userData?.WorkoutFrequency}, Gender={userData?.Gender}");
+
+            if (userData == null)
+            {
+                // If no profile exists, create an empty model or show a message
+                userData = new UserData();
+            }
+
+            // Return the profile data to the view
+            return View(userData);
         }
 
         [HttpGet]
