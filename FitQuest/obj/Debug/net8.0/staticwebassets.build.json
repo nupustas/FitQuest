@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "g9WiamoPsn0c3WjIBAGdupl/iKc+PGK1D4E4bqcH5Co=",
+  "Hash": "f3p9rdhEPzDYjczMYOwy+JpeC3VTnKxUHkbxL8A0nYA=",
   "Source": "FitQuest",
   "BasePath": "_content/FitQuest",
   "Mode": "Default",
@@ -8,19 +8,19 @@
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [
     {
-      "Name": "FitQuest/wwwroot",
+      "Name": "FitQuest\\wwwroot",
       "Source": "FitQuest",
-      "ContentRoot": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/",
+      "ContentRoot": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\",
       "BasePath": "_content/FitQuest",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/css/fitness.css",
+      "Identity": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\css\\fitness.css",
       "SourceId": "FitQuest",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/",
+      "ContentRoot": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\",
       "BasePath": "_content/FitQuest",
       "RelativePath": "css/fitness.css",
       "AssetKind": "All",
@@ -33,13 +33,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/css/fitness.css"
+      "OriginalItemSpec": "wwwroot\\css\\fitness.css"
     },
     {
-      "Identity": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/css/login.css",
+      "Identity": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\css\\login.css",
       "SourceId": "FitQuest",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/",
+      "ContentRoot": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\",
       "BasePath": "_content/FitQuest",
       "RelativePath": "css/login.css",
       "AssetKind": "All",
@@ -52,13 +52,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/css/login.css"
+      "OriginalItemSpec": "wwwroot\\css\\login.css"
     },
     {
-      "Identity": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/css/maindesign.css",
+      "Identity": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\css\\maindesign.css",
       "SourceId": "FitQuest",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/",
+      "ContentRoot": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\",
       "BasePath": "_content/FitQuest",
       "RelativePath": "css/maindesign.css",
       "AssetKind": "All",
@@ -71,13 +71,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/css/maindesign.css"
+      "OriginalItemSpec": "wwwroot\\css\\maindesign.css"
     },
     {
-      "Identity": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/css/recipes_style.css",
+      "Identity": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\css\\recipes_style.css",
       "SourceId": "FitQuest",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/",
+      "ContentRoot": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\",
       "BasePath": "_content/FitQuest",
       "RelativePath": "css/recipes_style.css",
       "AssetKind": "All",
@@ -90,13 +90,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/css/recipes_style.css"
+      "OriginalItemSpec": "wwwroot\\css\\recipes_style.css"
     },
     {
-      "Identity": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/css/resetrequest.css",
+      "Identity": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\css\\resetrequest.css",
       "SourceId": "FitQuest",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/",
+      "ContentRoot": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\",
       "BasePath": "_content/FitQuest",
       "RelativePath": "css/resetrequest.css",
       "AssetKind": "All",
@@ -109,13 +109,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/css/resetrequest.css"
+      "OriginalItemSpec": "wwwroot\\css\\resetrequest.css"
     },
     {
-      "Identity": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/css/site.css",
+      "Identity": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\css\\site.css",
       "SourceId": "FitQuest",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/",
+      "ContentRoot": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\",
       "BasePath": "_content/FitQuest",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -128,13 +128,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/css/site.css"
+      "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/images/blog-1.jpg",
+      "Identity": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\images\\blog-1.jpg",
       "SourceId": "FitQuest",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/",
+      "ContentRoot": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\",
       "BasePath": "_content/FitQuest",
       "RelativePath": "images/blog-1.jpg",
       "AssetKind": "All",
@@ -147,13 +147,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/images/blog-1.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\blog-1.jpg"
     },
     {
-      "Identity": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/images/blog-2.jpg",
+      "Identity": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\images\\blog-2.jpg",
       "SourceId": "FitQuest",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/",
+      "ContentRoot": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\",
       "BasePath": "_content/FitQuest",
       "RelativePath": "images/blog-2.jpg",
       "AssetKind": "All",
@@ -166,13 +166,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/images/blog-2.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\blog-2.jpg"
     },
     {
-      "Identity": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/images/blog-3.jpg",
+      "Identity": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\images\\blog-3.jpg",
       "SourceId": "FitQuest",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/",
+      "ContentRoot": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\",
       "BasePath": "_content/FitQuest",
       "RelativePath": "images/blog-3.jpg",
       "AssetKind": "All",
@@ -185,13 +185,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/images/blog-3.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\blog-3.jpg"
     },
     {
-      "Identity": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/images/gym_background.jpg",
+      "Identity": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\images\\gym_background.jpg",
       "SourceId": "FitQuest",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/",
+      "ContentRoot": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\",
       "BasePath": "_content/FitQuest",
       "RelativePath": "images/gym_background.jpg",
       "AssetKind": "All",
@@ -204,13 +204,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/images/gym_background.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\gym_background.jpg"
     },
     {
-      "Identity": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/images/login_back.jpg",
+      "Identity": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\images\\login_back.jpg",
       "SourceId": "FitQuest",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/",
+      "ContentRoot": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\",
       "BasePath": "_content/FitQuest",
       "RelativePath": "images/login_back.jpg",
       "AssetKind": "All",
@@ -223,13 +223,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/images/login_back.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\login_back.jpg"
     },
     {
-      "Identity": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/images/logo_flower.png",
+      "Identity": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\images\\logo_flower.png",
       "SourceId": "FitQuest",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/",
+      "ContentRoot": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\",
       "BasePath": "_content/FitQuest",
       "RelativePath": "images/logo_flower.png",
       "AssetKind": "All",
@@ -242,13 +242,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/images/logo_flower.png"
+      "OriginalItemSpec": "wwwroot\\images\\logo_flower.png"
     },
     {
-      "Identity": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/images/logo.png",
+      "Identity": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\images\\logo.png",
       "SourceId": "FitQuest",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/",
+      "ContentRoot": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\",
       "BasePath": "_content/FitQuest",
       "RelativePath": "images/logo.png",
       "AssetKind": "All",
@@ -261,13 +261,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/images/logo.png"
+      "OriginalItemSpec": "wwwroot\\images\\logo.png"
     },
     {
-      "Identity": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/images/team.jpg",
+      "Identity": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\images\\team.jpg",
       "SourceId": "FitQuest",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/",
+      "ContentRoot": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\",
       "BasePath": "_content/FitQuest",
       "RelativePath": "images/team.jpg",
       "AssetKind": "All",
@@ -280,13 +280,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/images/team.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\team.jpg"
     },
     {
-      "Identity": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/images/words_logo.png",
+      "Identity": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\images\\words_logo.png",
       "SourceId": "FitQuest",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/",
+      "ContentRoot": "C:\\Users\\petru\\Desktop\\VU\\Komparkas\\Project\\FitQuest\\FitQuest\\wwwroot\\",
       "BasePath": "_content/FitQuest",
       "RelativePath": "images/words_logo.png",
       "AssetKind": "All",
@@ -299,7 +299,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/images/words_logo.png"
+      "OriginalItemSpec": "wwwroot\\images\\words_logo.png"
     }
   ]
 }
