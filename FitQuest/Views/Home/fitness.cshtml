@@ -46,70 +46,98 @@
                 <p>@ViewBag.Error</p>
             </div>
         }
-        else
-        {
-            <div class="workout-plan">
-                <h2>Your AI-Generated Workout Plan</h2>
-            </div>
-        }
+      
+
+       
+
+     <div class="row-1">
+    <a id="openMon" href="#"> 
+        <div class="collumn">
+            <h2>MON</h2>
+        </div>
+    </a>
+    <a id="openTue" href="#"> 
+        <div class="collumn">
+            <h2>TUE</h2>
+        </div>
+    </a>
+    <a id="openWed" href="#"> 
+        <div class="collumn">
+            <h2>WED</h2>
+        </div>
+    </a>
+    <a id="openThu" href="#"> 
+        <div class="collumn">
+            <h2>THU</h2>
+        </div>
+    </a>
+    <a id="openFri" href="#"> 
+        <div class="collumn">
+            <h2>FRI</h2>
+        </div>
+    </a>
+    <a id="openSat" href="#"> 
+        <div class="collumn">
+            <h2>SAT</h2>
+        </div>
+    </a>
+    <a id="openSun" href="#"> 
+        <div class="collumn">
+            <h2>SUN</h2>
+        </div>
+    </a>
+</div>
+
+<!-- Modals -->
+<div id="monModal" class="modal">
+    <div class="modal-content">
+        <span class="close" data-modal="monModal">&times;</span>
+        <p>@ViewBag.MondayWorkout</p>
+    </div>
+</div>
+<div id="tueModal" class="modal">
+    <div class="modal-content">
+        <span class="close" data-modal="tueModal">&times;</span>
+        <p>@ViewBag.TuesdayWorkout</p>
+    </div>
+</div>
+<div id="wedModal" class="modal">
+    <div class="modal-content">
+        <span class="close" data-modal="wedModal">&times;</span>
+        <p>@ViewBag.WednesdayWorkout</p>
+    </div>
+</div>
+<div id="thuModal" class="modal">
+    <div class="modal-content">
+        <span class="close" data-modal="thuModal">&times;</span>
+        <p>@ViewBag.ThursdayWorkout</p>
+    </div>
+</div>
+<div id="friModal" class="modal">
+    <div class="modal-content">
+        <span class="close" data-modal="friModal">&times;</span>
+        <p>@ViewBag.FridayWorkout</p>
+    </div>
+</div>
+<div id="satModal" class="modal">
+    <div class="modal-content">
+        <span class="close" data-modal="satModal">&times;</span>
+        <p>@ViewBag.SaturdayWorkout</p>
+    </div>
+</div>
+<div id="sunModal" class="modal">
+    <div class="modal-content">
+        <span class="close" data-modal="sunModal">&times;</span>
+        <p>@ViewBag.SundayWorkout</p>
+    </div>
+</div>
+ <div id="successMessage" style="display: none; color: green; font-weight: bold; text-align: center; margin: 10px;">
+        Plan generated successfully
+    </div>
 
         <form method="post" action="/Workout/GenerateWorkoutPlan" class="generate-plan-form">
-            <button type="submit" class="generate-plan-button">Generate Workout Plan</button>
+            <button type="submit" class="edit-plan">Generate Workout Plan</button>
         </form>
-
-        <div class="row-1">
-            <div class="collumn">
-                <h2>MON</h2>
-            </div>
-            <div class="collumn">
-                <h2>TUE</h2>
-            </div>
-            <div class="collumn">
-                <h2>WED</h2>
-            </div>
-            <div class="collumn">
-                <h2>THU</h2>
-                
-            </div>
-            <div class="collumn">
-                <h2>FRI</h2>
-                
-            </div>
-            <div class="collumn">
-                <h2>SAT</h2>
-                
-            </div>
-            <div class="collumn">
-                <h2>SUN</h2>
-               
-            </div>
-        </div>
-        <div class="row-2">
-            <div class="collumn-2">
-                <p>@ViewBag.MondayWorkout</p>
-            </div> 
-            <div class="collumn-2">
-               <p>@ViewBag.TuesdayWorkout</p>
-            </div> 
-            <div class="collumn-2">
-                <p>@ViewBag.WednesdayWorkout</p>
-            </div> 
-            <div class="collumn-2">
-                <p>@ViewBag.ThursdayWorkout</p>
-            </div> 
-            <div class="collumn-2">
-                <p>@ViewBag.FridayWorkout</p>
-            </div> 
-            <div class="collumn-2">
-                <p>@ViewBag.SaturdayWorkout</p>
-            </div> 
-            <div class="collumn-2">
-                 <p>@ViewBag.SundayWorkout</p>
-            </div> 
-
-        </div>
-
-        <button class="edit_plan">Edit plan</button>
     </section>
 
     <section class="meal-log">
@@ -134,6 +162,63 @@
         function hideMenu(){
             navLinks.style.right = "-200px";
         }
+        function showSuccessMessage(event) {
+    // Prevent form submission to demonstrate success message
+    event.preventDefault();
+
+    // Get the success message element
+    const successMessage = document.getElementById('successMessage');
+
+    // Show the success message
+    successMessage.style.display = 'block';
+
+    // Hide the message after 5 seconds
+    setTimeout(() => {
+        successMessage.style.display = 'none';
+    }, 5000);
+
+    // Uncomment the next line for actual form submission
+    event.target.submit();
+}
+      // Attach event listeners to day divs
+const dayLinks = {
+    openMon: 'monModal',
+    openTue: 'tueModal',
+    openWed: 'wedModal',
+    openThu: 'thuModal',
+    openFri: 'friModal',
+    openSat: 'satModal',
+    openSun: 'sunModal',
+};
+
+Object.entries(dayLinks).forEach(([linkId, modalId]) => {
+    const link = document.getElementById(linkId);
+    const modal = document.getElementById(modalId);
+
+    // Show modal when link is clicked
+    link.addEventListener('click', (event) => {
+        event.preventDefault(); // Prevent default anchor behavior
+        modal.style.display = 'block'; // Show the modal
+        console.log('showSuccessMessage function triggered');
+
+    });
+});
+
+// Close modals when the close button or outside area is clicked
+document.querySelectorAll('.close').forEach(closeBtn => {
+    closeBtn.addEventListener('click', () => {
+        const modalId = closeBtn.getAttribute('data-modal');
+        document.getElementById(modalId).style.display = 'none';
+    });
+});
+
+window.addEventListener('click', (event) => {
+    if (event.target.classList.contains('modal')) {
+        event.target.style.display = 'none'; // Close modal if background is clicked
+    }
+});
+
+
     </script>
 </body>
 </html>
