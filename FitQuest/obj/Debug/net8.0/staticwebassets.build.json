@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "g9WiamoPsn0c3WjIBAGdupl/iKc+PGK1D4E4bqcH5Co=",
+  "Hash": "wTh8ZT2vfSsKaC5aUJSfoGaryHhNqB8PiNTHD9G9J1w=",
   "Source": "FitQuest",
   "BasePath": "_content/FitQuest",
   "Mode": "Default",
@@ -72,6 +72,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/css/maindesign.css"
+    },
+    {
+      "Identity": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/css/profile.css",
+      "SourceId": "FitQuest",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/",
+      "BasePath": "_content/FitQuest",
+      "RelativePath": "css/profile.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/profile.css"
     },
     {
       "Identity": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/css/recipes_style.css",
@@ -281,6 +300,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/team.jpg"
+    },
+    {
+      "Identity": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/images/userbackground.jpg",
+      "SourceId": "FitQuest",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/",
+      "BasePath": "_content/FitQuest",
+      "RelativePath": "images/userbackground.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/userbackground.jpg"
     },
     {
       "Identity": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/images/words_logo.png",

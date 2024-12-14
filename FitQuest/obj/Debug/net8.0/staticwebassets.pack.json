@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets/css/maindesign.css"
     },
     {
+      "Id": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/css/profile.css",
+      "PackagePath": "staticwebassets/css/profile.css"
+    },
+    {
       "Id": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/css/recipes_style.css",
       "PackagePath": "staticwebassets/css/recipes_style.css"
     },
@@ -55,6 +59,10 @@
     {
       "Id": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/images/team.jpg",
       "PackagePath": "staticwebassets/images/team.jpg"
+    },
+    {
+      "Id": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/images/userbackground.jpg",
+      "PackagePath": "staticwebassets/images/userbackground.jpg"
     },
     {
       "Id": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/images/words_logo.png",

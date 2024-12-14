@@ -21,7 +21,6 @@
                     <li><a href="/home/Index">HOME</a></li>
                     <li><a href="/home/Fitness">FITNESS</a></li>
                     <li><a href="/home/Nutrition">NUTRITION</a></li>
-                    <li><a href="/home/Progress">PROGRESS</a></li>
                     <li><a href="/home/Recipes">RECIPES</a></li>
 
                     @{
@@ -29,7 +28,7 @@
                         if (!string.IsNullOrEmpty(username))
                         {
                             <!-- Display the user's name if they are logged in -->
-                            <li><a href="/Home/Profile" class="user-button">@username</a></li>
+                            <li><a href="/Home/Profile" class="user-button">@username.ToUpper()</a></li>
                             <li><a href="/home/Logout">LOGOUT</a></li>
                         }
                         else

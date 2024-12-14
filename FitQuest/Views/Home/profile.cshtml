@@ -4,64 +4,101 @@
 <!DOCTYPE html>
 <html>
 <head>
+     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="~/css/profile.css" />
     <title>User Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
 </head>
 <body>
-    @{
-        var userID = Context.Session.GetInt32("UserId");
-        if (userID == null)
-        {
-            <h1>Log in to get workout plans</h1>
-        }
-        else
-        {
-            var username = Context.Session.GetString("Username");
-            <h2>Hi @username, </h2>
-            
+    <nav>
+        <a href="/home/index"> <img src="~/images/words_logo.png"> </a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="/home/Index">HOME</a></li>
+                <li><a href="/home/Fitness">FITNESS</a></li>
+                <li><a href="/home/Nutrition">NUTRITION</a></li>
+                <li><a href="/home/Recipes">RECIPES</a></li>
 
-            <form method="post" action="/UserProfile/SaveProfile">
-                <div>
-                    <label>Age:</label>
-                    <input type="number" name="Age" min="0" required />
-                </div>
+                @{
+                    var username = Context.Session.GetString("Username");
+                    if (!string.IsNullOrEmpty(username))
+                    {
+                        <!-- Display the user's name if they are logged in -->
+                        <li><a href="/Home/Profile" class="user-button">@username.ToUpper()</a></li>
+                        <li><a href="/home/Logout">LOGOUT</a></li>
+                    }
+                    else
+                    {
+                        <!-- Show "Sign In / Sign Up" if the user is not logged in -->
+                        <li><a href="/home/Login" class="user-button">SIGN IN / SIGN UP</a></li>
+                    }
+                }
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
 
-                <div>
-                    <label>Height (cm):</label>
-                    <input type="number" name="Height" min="0" required />
-                </div>
+    <section class="user-profile">
+        <div class="profile-container">
+           <h2 class="section-title">
+    Your<br />
+    Information
+</h2>
 
-                <div>
-                    <label>Weight (kg):</label>
-                    <input type="number" name="Weight" min="0" required />
-                </div>
-
-                <div>
-                    <label>Goals:</label>
-                    <select name="Goals" required>
-                        <option value="">Select Goal</option>
-                        <option value="lose weight">Lose Weight</option>
-                        <option value="gain weight">Gain Weight</option>
-                        <option value="maintain weight">Maintain Weight</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label>Workout Frequency (days/week):</label>
-                    <input type="number" name="WorkoutFrequency" min="0" max="7" required />
-                </div>
-
-                <div>
-                    <label>Gender:</label>
-                    <select name="Gender" required>
-                        <option value="">Select Gender</option>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <!-- Additional options can be added if necessary -->
-                    </select>
-                </div>
-                <button type="submit">Save</button>
-            </form>
-        }
-    }
+            <div class="info-box">
+                @{
+                    var userID = Context.Session.GetInt32("UserId");
+                    if (userID == null)
+                    {
+                        <h1>Log in to get workout plans</h1>
+                    }
+                    else
+                    {
+                        <form method="post" action="/UserProfile/SaveProfile">
+                            <div class="form-row">
+                                <label>Age:</label>
+                                <input type="number" name="Age" min="0" required />
+                            </div>
+                            <div class="form-row">
+                                <label>Height (cm):</label>
+                                <input type="number" name="Height" min="0" required />
+                            </div>
+                            <div class="form-row">
+                                <label>Weight (kg):</label>
+                                <input type="number" name="Weight" min="0" required />
+                            </div>
+                            <div class="form-row">
+                                <label>Goals:</label>
+                                <select name="Goals" required>
+                                    <option value="">Select Goal</option>
+                                    <option value="lose weight">Lose Weight</option>
+                                    <option value="gain weight">Gain Weight</option>
+                                    <option value="maintain weight">Maintain Weight</option>
+                                </select>
+                            </div>
+                            <div class="form-row">
+                                <label>Workout Frequency (days/week):</label>
+                                <input type="number" name="WorkoutFrequency" min="0" max="7" required />
+                            </div>
+                            <div class="form-row">
+                                <label>Gender:</label>
+                                <select name="Gender" required>
+                                    <option value="">Select Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </div>
+                            <button type="submit">Save</button>
+                        </form>
+                    }
+                }
+            </div>
+        </div>
+    </section>
 </body>
 </html>
