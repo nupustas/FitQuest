@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/hiFj2N6hHoLmX5SOyTESQTWIKD75bjb1m6geUco+Hk=",
+  "Hash": "uKetRdt0BXc5HftzOift+2V+uFtM4RVVFH1/idJK5Tg=",
   "Source": "FitQuest",
   "BasePath": "_content/FitQuest",
   "Mode": "Default",
@@ -72,6 +72,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\maindesign.css"
+    },
+    {
+      "Identity": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest-1\\FitQuest\\wwwroot\\css\\nutrition.css",
+      "SourceId": "FitQuest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest-1\\FitQuest\\wwwroot\\",
+      "BasePath": "_content/FitQuest",
+      "RelativePath": "css/nutrition.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\nutrition.css"
     },
     {
       "Identity": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest-1\\FitQuest\\wwwroot\\css\\profile.css",

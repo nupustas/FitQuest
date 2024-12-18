@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\css\\maindesign.css"
     },
     {
+      "Id": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest-1\\FitQuest\\wwwroot\\css\\nutrition.css",
+      "PackagePath": "staticwebassets\\css\\nutrition.css"
+    },
+    {
       "Id": "C:\\Users\\vejas\\OneDrive\\Desktop\\FitQuest-1\\FitQuest\\wwwroot\\css\\profile.css",
       "PackagePath": "staticwebassets\\css\\profile.css"
     },
