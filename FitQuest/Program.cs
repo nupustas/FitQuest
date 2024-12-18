@@ -7,16 +7,19 @@ using MySqlConnector;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+// Retrieve the connection string from configuration (appsettings.json or Azure App Service configuration)
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+// Modify the connection string (SSL settings removed since SSL is disabled)
+var connection = new MySqlConnectionStringBuilder(connectionString)
+{
+    // No need to set SSL parameters if SSL is disabled
+    SslMode = MySqlSslMode.None
+};
+
+// Add DbContext with MySQL connection string and version
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
-    var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-    var connection = new MySqlConnectionStringBuilder(connectionString)
-    {
-        SslMode = MySqlSslMode.Required,
-        SslCa = "certs/server-ca.pem",
-        SslCert = "certs/client-cert.pem",
-        SslKey = "certs/client-key.pem"
-    };
     options.UseMySql(connection.ConnectionString, new MySqlServerVersion(new Version(8, 0, 21)));
 });
 
