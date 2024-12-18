@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest-1\\FitQuest\\FitQuest.csproj": {}
+    "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\FitQuest\\FitQuest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest-1\\FitQuest\\FitQuest.csproj": {
+    "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\FitQuest\\FitQuest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest-1\\FitQuest\\FitQuest.csproj",
+        "projectUniqueName": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\FitQuest\\FitQuest.csproj",
         "projectName": "FitQuest",
-        "projectPath": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest-1\\FitQuest\\FitQuest.csproj",
+        "projectPath": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\FitQuest\\FitQuest.csproj",
         "packagesPath": "C:\\Users\\vejas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest-1\\FitQuest\\obj\\",
+        "outputPath": "C:\\Users\\vejas\\OneDrive\\Desktop\\uni\\FitQuest\\FitQuest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vejas\\AppData\\Roaming\\NuGet\\NuGet.Config",
