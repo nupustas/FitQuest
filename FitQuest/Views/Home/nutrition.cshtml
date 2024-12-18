@@ -7,63 +7,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generate Nutrition Plan</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-        }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #333;
-            color: white;
-            text-align: center;
-            border-radius: 5px;
-        }
-        .button:hover {
-            background-color: #77aaff;
-        }
-        #dietPlanResult {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: white;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        .error-message {
-            color: red;
-            font-weight: bold;
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #ffe6e6;
-            border: 1px solid red;
-            border-radius: 5px;
-        }
-        .error-message .button {
-            background-color: #f44336;
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="~/css/nutrition.css" />
+    <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@@fortawesome/fontawesome-free@6.6.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
+     <nav>
+            <a href="/home/index"> <img src="~/images/words_logo.png"> </a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()" ></i>
+                <ul>
+                    <li><a href="/home/Index">HOME</a></li>
+                    <li><a href="/home/Fitness">FITNESS</a></li>
+                    <li><a href="/home/Nutrition">NUTRITION</a></li>
+                    <li><a href="/home/Recipes">RECIPES</a></li>
 
-    <header>
-        <h1>Diet Plan Generator</h1>
-    </header>
+                    @{
+                        var username = Context.Session.GetString("Username");
+                        if (!string.IsNullOrEmpty(username))
+                        {
+                            <!-- Display the user's name if they are logged in -->
+                            <li><a href="/Home/Profile" class="user-button">@username.ToUpper()</a></li>
+                            <li><a href="/home/Logout">LOGOUT</a></li>
+                        }
+                        else
+                        {
+                            <!-- Show "Sign In / Sign Up" if the user is not logged in -->
+                            <li><a href="/home/Login" class="user-button">SIGN IN / SIGN UP</a></li>
+                        }
+                    }
+                    
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
 
     <div class="container">
         <!-- Check if the user is logged in -->
@@ -87,7 +70,7 @@
                 <button type="submit" class="button">Generate Nutrition Plan</button>
             </form>
 
-            <!-- Show error message if there is any -->
+
             @if (ViewBag.ErrorMessage != null)
             {
                 <div class="error-message">
@@ -114,6 +97,15 @@
             }
         }
     </div>
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+    </script>
 
 </body>
 </html>
