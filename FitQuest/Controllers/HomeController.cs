@@ -21,6 +21,25 @@ namespace FitQuest.Controllers
 
         public IActionResult Index()
         {
+             // Try to get a quote that has not been used yet
+            var quote = _context.MQuotes.FirstOrDefault(q => q.Used == 0);
+
+            if (quote != null)
+            {
+                // Mark the quote as used
+                quote.Used = 1;
+                _context.SaveChanges();  // Save changes to the database
+
+                // Pass the quote to the view using ViewData
+                ViewData["DailyQuote"] = quote.Quote;
+            }
+            else
+            {
+                // If no unused quote is found, get a random quote or a fallback
+                var fallbackQuote = _context.MQuotes.OrderBy(q => Guid.NewGuid()).FirstOrDefault();
+                ViewData["DailyQuote"] = fallbackQuote?.Quote ?? "No quotes available for today!";
+            }
+
             return View();
         }
 

@@ -7,6 +7,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" type="text/css" href="~/css/maindesign.css" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generate Nutrition Plan</title>
@@ -62,7 +63,31 @@
 <body>
 
     <header>
-        <h1>Diet Plan Generator</h1>
+        <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()" ></i>
+                <ul>
+                    <li><a href="/home/Index">HOME</a></li>
+                    <li><a href="/home/Fitness">FITNESS</a></li>
+                    <li><a href="/home/Nutrition">NUTRITION</a></li>
+                    <li><a href="/home/Recipes">RECIPES</a></li>
+
+                    @{
+                        var username = Context.Session.GetString("Username");
+                        if (!string.IsNullOrEmpty(username))
+                        {
+                            <!-- Display the user's name if they are logged in -->
+                            <li><a href="/Home/Profile" class="user-button">@username</a></li>
+                            <li><a href="/home/Logout">LOGOUT</a></li>
+                        }
+                        else
+                        {
+                            <!-- Show "Sign In / Sign Up" if the user is not logged in -->
+                            <li><a href="/home/Login" class="user-button">SIGN IN / SIGN UP</a></li>
+                        }
+                    }
+                    
+                </ul>
+            </div>
     </header>
 
     <div class="container">
