@@ -12,7 +12,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
     var connection = new MySqlConnectionStringBuilder(connectionString)
     {
-        SslMode = MySqlSslMode.Required,
+        SslMode = MySqlSslMode.None,
         SslCa = "certs/server-ca.pem",
         SslCert = "certs/client-cert.pem",
         SslKey = "certs/client-key.pem"
