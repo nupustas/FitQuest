@@ -21,31 +21,47 @@ namespace FitQuest.Controllers
 
         public IActionResult Index()
         {
-          
-            // Get the total number of quotes in the database
-int totalQuotes = _context.MQuotes.Count();
+        // Get the current time
+        DateTime now = DateTime.Now;
 
-if (totalQuotes > 0)
-{
-    // Generate a random index
-    Random random = new Random();
-    int randomIndex = random.Next(totalQuotes); // Generates a random number between 0 and totalQuotes - 1
+        // Fetch the quote that was most recently used
+        var lastUsedQuote = _context.MQuotes.OrderByDescending(q => q.LastUsedAt).FirstOrDefault();
 
-    // Retrieve the quote at the random index
-    var randomQuote = _context.MQuotes.Skip(randomIndex).FirstOrDefault();
+        if (lastUsedQuote == null || lastUsedQuote.LastUsedAt == null || (now - lastUsedQuote.LastUsedAt.Value).TotalHours >= 6)
+        {
+            // It has been more than 6 hours or no quote has been used yet
+            int totalQuotes = _context.MQuotes.Count();
+            if (totalQuotes > 0)
+            {
+                Random random = new Random();
+                int randomIndex = random.Next(totalQuotes);
+                var newQuote = _context.MQuotes.Skip(randomIndex).FirstOrDefault();
 
-    // Pass the randomly selected quote to the view
-    ViewData["DailyQuote"] = randomQuote?.Quote ?? "No quotes available for today!";
-}
-else
-{
-    // Fallback if no quotes are found
-    ViewData["DailyQuote"] = "No quotes available for today!";
-}
+                if (newQuote != null)
+                {
+                    // Update the `LastUsedAt` column for the new quote
+                    newQuote.LastUsedAt = now;
+                    _context.SaveChanges();
 
-
-            return View();
+                    // Display the new quote
+                    ViewData["DailyQuote"] = newQuote.Quote;
+                }
+            }
+            else
+            {
+                // Fallback if no quotes are found
+                ViewData["DailyQuote"] = "No quotes available for today!";
+            }
         }
+        else
+        {
+            // Within 6 hours, reuse the most recently used quote
+            ViewData["DailyQuote"] = lastUsedQuote.Quote;
+        }
+
+    return View();
+}
+
 
         public IActionResult Register()
         {
