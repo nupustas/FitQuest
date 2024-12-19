@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FitQuest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6a5f281adf3b83c62708a70a581133f6a3aa1cc3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+34fde2e788641a49fc7293f6e424a5da89e33bd3")]
 [assembly: System.Reflection.AssemblyProductAttribute("FitQuest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FitQuest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

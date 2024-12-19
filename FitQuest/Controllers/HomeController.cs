@@ -21,24 +21,28 @@ namespace FitQuest.Controllers
 
         public IActionResult Index()
         {
-             // Try to get a quote that has not been used yet
-            var quote = _context.MQuotes.FirstOrDefault(q => q.Used == 0);
+          
+            // Get the total number of quotes in the database
+int totalQuotes = _context.MQuotes.Count();
 
-            if (quote != null)
-            {
-                // Mark the quote as used
-                quote.Used = 1;
-                _context.SaveChanges();  // Save changes to the database
+if (totalQuotes > 0)
+{
+    // Generate a random index
+    Random random = new Random();
+    int randomIndex = random.Next(totalQuotes); // Generates a random number between 0 and totalQuotes - 1
 
-                // Pass the quote to the view using ViewData
-                ViewData["DailyQuote"] = quote.Quote;
-            }
-            else
-            {
-                // If no unused quote is found, get a random quote or a fallback
-                var fallbackQuote = _context.MQuotes.OrderBy(q => Guid.NewGuid()).FirstOrDefault();
-                ViewData["DailyQuote"] = fallbackQuote?.Quote ?? "No quotes available for today!";
-            }
+    // Retrieve the quote at the random index
+    var randomQuote = _context.MQuotes.Skip(randomIndex).FirstOrDefault();
+
+    // Pass the randomly selected quote to the view
+    ViewData["DailyQuote"] = randomQuote?.Quote ?? "No quotes available for today!";
+}
+else
+{
+    // Fallback if no quotes are found
+    ViewData["DailyQuote"] = "No quotes available for today!";
+}
+
 
             return View();
         }
