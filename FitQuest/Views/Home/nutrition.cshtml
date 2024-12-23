@@ -62,13 +62,15 @@
         }
         else
         {
-            <!-- If logged in, allow generating the nutrition plan -->
-            <h2>Click below to generate your personalized diet plan</h2>
+           <div class="generate">
+    <h2>Click below to generate your personalized diet plan</h2>
+    <form method="post" action="/Home/GenerateNutritionPlan" onsubmit="hideGenerateDiv(event)">
+        <button type="submit" class="button">Generate Nutrition Plan</button>
+    </form>
+</div>
 
-            <!-- Button to trigger nutrition plan generation -->
-            <form method="post" action="/Home/GenerateNutritionPlan">
-                <button type="submit" class="button">Generate Nutrition Plan</button>
-            </form>
+            <!-- If logged in, allow generating the nutrition plan -->
+            
 
 
             @if (ViewBag.ErrorMessage != null)
@@ -91,10 +93,10 @@
             }
 
             <!-- If no diet plan generated, prompt user to update profile -->
-            @if (Model == null || string.IsNullOrEmpty(Model.DietPlan))
+            @* @if (Model == null || string.IsNullOrEmpty(Model.DietPlan))
             {
-                <p>Please update your profile information to generate a nutrition plan.</p>
-            }
+                <h2>Please update your profile information to generate a nutrition plan.</h2>
+            } *@
         }
     </div>
     <script>
@@ -105,6 +107,24 @@
         function hideMenu(){
             navLinks.style.right = "-200px";
         }
+         function hideGenerateDiv(event) {
+        // Prevent default submission temporarily
+        event.preventDefault();
+
+        // Find the generate div
+        const generateDiv = document.querySelector('.generate');
+
+        if (generateDiv) {
+            // Add the hidden class to fade out and hide the div
+            generateDiv.classList.add('hidden');
+        }
+
+        // Wait for the fade-out animation before submitting the form
+        setTimeout(() => {
+            event.target.submit(); // Submit the form
+        }, 300); // Match the CSS transition duration
+    }
+    }
     </script>
 
 </body>

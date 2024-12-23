@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets/css/recipes_style.css"
     },
     {
+      "Id": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/css/registration_confirmation.css",
+      "PackagePath": "staticwebassets/css/registration_confirmation.css"
+    },
+    {
       "Id": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/css/resetrequest.css",
       "PackagePath": "staticwebassets/css/resetrequest.css"
     },

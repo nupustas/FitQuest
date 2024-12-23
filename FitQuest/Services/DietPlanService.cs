@@ -64,6 +64,7 @@ namespace FitQuest.Services
 
         private string FormatDietPlan(JObject json)
         {
+             
             var result = new System.Text.StringBuilder();
 
             result.AppendLine("<div class='diet-plan'>");
@@ -120,5 +121,6 @@ namespace FitQuest.Services
 
             return result.ToString();
         }
+                
     }
 }

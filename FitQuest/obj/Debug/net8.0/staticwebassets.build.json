@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "1kjRsE10ChfODjX+6xlrYHX/PJhV7TL8aXK7+Sf4OkM=",
+  "Hash": "iyyTiyS3lYtM0NhUHPv/X2OPVIIko76T4OSnx/Rxnic=",
   "Source": "FitQuest",
   "BasePath": "_content/FitQuest",
   "Mode": "Default",
@@ -129,6 +129,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/css/recipes_style.css"
+    },
+    {
+      "Identity": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/css/registration_confirmation.css",
+      "SourceId": "FitQuest",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/",
+      "BasePath": "_content/FitQuest",
+      "RelativePath": "css/registration_confirmation.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/registration_confirmation.css"
     },
     {
       "Identity": "/Users/anastasijafedorenko/FitQuest/FitQuest/wwwroot/css/resetrequest.css",
