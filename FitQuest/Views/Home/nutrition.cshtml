@@ -13,40 +13,39 @@
     <link rel="stylesheet" type="text/css" href="~/css/nutrition.css" />
     <title>Home</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@@fortawesome/fontawesome-free@6.6.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@@fortawesome/fontawesome-free@6.6.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-     <nav>
-            <a href="/home/index"> <img src="~/images/words_logo.png"> </a>
-            <div class="nav-links" id="navLinks">
-                <i class="fa fa-times" onclick="hideMenu()" ></i>
-                <ul>
-                    <li><a href="/home/Index">HOME</a></li>
-                    <li><a href="/home/Fitness">FITNESS</a></li>
-                    <li><a href="/home/Nutrition">NUTRITION</a></li>
-                    <li><a href="/home/Recipes">RECIPES</a></li>
+    <nav>
+        <a href="/home/index"> <img src="~/images/words_logo.png"> </a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="/home/Index">HOME</a></li>
+                <li><a href="/home/Fitness">FITNESS</a></li>
+                <li><a href="/home/Nutrition">NUTRITION</a></li>
+                <li><a href="/home/Recipes">RECIPES</a></li>
 
-                    @{
-                        var username = Context.Session.GetString("Username");
-                        if (!string.IsNullOrEmpty(username))
-                        {
-                            <!-- Display the user's name if they are logged in -->
-                            <li><a href="/Home/Profile" class="user-button">@username.ToUpper()</a></li>
-                            <li><a href="/home/Logout">LOGOUT</a></li>
-                        }
-                        else
-                        {
-                            <!-- Show "Sign In / Sign Up" if the user is not logged in -->
-                            <li><a href="/home/Login" class="user-button">SIGN IN / SIGN UP</a></li>
-                        }
+                @{
+                    var username = Context.Session.GetString("Username");
+                    if (!string.IsNullOrEmpty(username))
+                    {
+                        <!-- Display the user's name if they are logged in -->
+                        <li><a href="/Home/Profile" class="user-button">@username.ToUpper()</a></li>
+                        <li><a href="/home/Logout">LOGOUT</a></li>
                     }
-                    
-                </ul>
-            </div>
-            <i class="fa fa-bars" onclick="showMenu()"></i>
-        </nav>
+                    else
+                    {
+                        <!-- Show "Sign In / Sign Up" if the user is not logged in -->
+                        <li><a href="/home/Login" class="user-button">SIGN IN / SIGN UP</a></li>
+                    }
+                }
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
 
     <div class="container">
         <!-- Check if the user is logged in -->
@@ -62,17 +61,14 @@
         }
         else
         {
-           <div class="generate">
-    <h2>Click below to generate your personalized diet plan</h2>
-    <form method="post" action="/Home/GenerateNutritionPlan" onsubmit="hideGenerateDiv(event)">
-        <button type="submit" class="button">Generate Nutrition Plan</button>
-    </form>
-</div>
+            <div class="generate">
+                <h2>Click below to generate your personalized diet plan</h2>
+                <form method="post" action="/Home/GenerateNutritionPlan" onsubmit="hideGenerateDiv(event)">
+                    <button type="submit" class="button">Generate Nutrition Plan</button>
+                </form>
+            </div>
 
             <!-- If logged in, allow generating the nutrition plan -->
-            
-
-
             @if (ViewBag.ErrorMessage != null)
             {
                 <div class="error-message">
@@ -88,7 +84,7 @@
             {
                 <div id="dietPlanResult">
                     <h3>Your Nutrition Plan</h3>
-                    @Html.Raw(Model.DietPlan)
+                    @Html.Raw(Model.DietPlan.Replace("week.", ""))
                 </div>
             }
 
@@ -107,24 +103,23 @@
         function hideMenu(){
             navLinks.style.right = "-200px";
         }
-         function hideGenerateDiv(event) {
-        // Prevent default submission temporarily
-        event.preventDefault();
+        function hideGenerateDiv(event) {
+            // Prevent default submission temporarily
+            event.preventDefault();
 
-        // Find the generate div
-        const generateDiv = document.querySelector('.generate');
+            // Find the generate div
+            const generateDiv = document.querySelector('.generate');
 
-        if (generateDiv) {
-            // Add the hidden class to fade out and hide the div
-            generateDiv.classList.add('hidden');
+            if (generateDiv) {
+                // Add the hidden class to fade out and hide the div
+                generateDiv.classList.add('hidden');
+            }
+
+            // Wait for the fade-out animation before submitting the form
+            setTimeout(() => {
+                event.target.submit(); // Submit the form
+            }, 300); // Match the CSS transition duration
         }
-
-        // Wait for the fade-out animation before submitting the form
-        setTimeout(() => {
-            event.target.submit(); // Submit the form
-        }, 300); // Match the CSS transition duration
-    }
-    }
     </script>
 
 </body>
