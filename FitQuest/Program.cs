@@ -48,6 +48,8 @@ void TestDatabaseConnection(string connectionString)
 builder.Services.Configure<GroqCloudAIConfig>(builder.Configuration.GetSection("GroqCloudAI"));
 builder.Services.AddHttpClient<GroqCloudAIService>(); // Register GroqCloudAIService with HttpClient
 
+
+
 // Add session services
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
@@ -61,6 +63,10 @@ builder.Services.AddSession(options =>
 builder.Services.AddControllersWithViews();
 builder.Services.AddTransient<IEmailSender, EmailSender>();
 builder.Services.AddHttpClient<IDietPlanService, DietPlanService>(); // Register DietPlanService
+builder.Services.AddTransient<SpoonacularService>();
+builder.Services.AddTransient<RecipeService>();
+
+
 builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
 
 builder.Services.ConfigureApplicationCookie(options =>

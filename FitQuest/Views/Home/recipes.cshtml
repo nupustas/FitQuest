@@ -5,44 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="~/css/recipes_style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@@fortawesome/fontawesome-free@6.6.0/css/all.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<title>Recipes</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Recipes</title>
 </head>
 <header>
     <nav>
-        <a href="index.html"> <img src="~/images/words_logo.png"> </a>
+        <a href="index.html"><img src="~/images/words_logo.png"></a>
         <div class="nav-links" id="navLinks">
-            <i class="fa fa-times" onclick="hideMenu()" ></i>
+            <i class="fa fa-times" onclick="hideMenu()"></i>
             <ul>
                 <li><a href="/home/index">HOME</a></li>
                 <li><a href="/home/fitness">FITNESS</a></li>
                 <li><a href="/home/nutrition">NUTRITION</a></li>
                 <li><a href="/home/recipes">RECIPES</a></li>
+                @* Handle user login state *@
                 @{
-                        var username = Context.Session.GetString("Username");
-                        if (!string.IsNullOrEmpty(username))
-                        {
-                            <!-- Display the user's name if they are logged in -->
-                            <li><a href="/Home/Profile" class="user-button">@username.ToUpper()</a></li>
-                            <li><a href="/home/Logout">LOGOUT</a></li>
-                        }
-                        else
-                        {
-                            <!-- Show "Sign In / Sign Up" if the user is not logged in -->
-                            <li><a href="/home/Login" class="user-button">SIGN IN / SIGN UP</a></li>
-                        }
+                    var username = Context.Session.GetString("Username");
+                    if (!string.IsNullOrEmpty(username))
+                    {
+                        <li><a href="/Home/Profile" class="user-button">@username.ToUpper()</a></li>
+                        <li><a href="/home/Logout">LOGOUT</a></li>
                     }
+                    else
+                    {
+                        <li><a href="/home/Login" class="user-button">SIGN IN / SIGN UP</a></li>
+                    }
+                }
             </ul>
         </div>
         <i class="fa fa-bars" onclick="showMenu()"></i>
     </nav>
 </header>
+
 <body>
     <section class="diet" id="diet">
         <h1 class="heading">Diet plan</h1>
-
         <ul class="controls">
             <li class="buttons active" data-filter="all">
                 <img src="~/images/all-icon.svg" alt="">
@@ -62,196 +61,205 @@
             </li>
         </ul>
         <div class="add_new">
-            <button class="add_new_button" ><i class="bi bi-plus-circle"></i>Add new recipe</button>
+            <button class="add_new_button"><i class="bi bi-plus-circle"></i>Add new recipe</button>
         </div>
-
-
-    <div class="image-container">
-
-        <div class="box lunch">
-            <div class="image">
-                <img src="images/diet/diet-1.jpeg" alt="">
-            </div>
-            <div class="content">
-                <a href="#" class="link">Lorem ipsum dolor sit amet consectetur</a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id ut voluptatibus aperiam velit, quos perferendis laborum deleniti natus.</p>
-                <div class="icon">
-                    <a href="#"><i class="fas fa-clock"></i>November 1, 2024</a>
-                    <a href="#"><i class="fas fa-user"></i>by admin</a>
-                </div>
-            </div>
+        <div class="image-container">
+            <!-- Your existing diet plan boxes here -->
         </div>
-
-
-        <div class="box breakfast">
-            <div class="image">
-                <img src="images/diet/diet-10.jpg" alt="">
-            </div>
-            <div class="content">
-                <a href="#" class="link">Lorem ipsum dolor sit amet consectetur</a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id ut voluptatibus aperiam velit, quos perferendis laborum deleniti natus.</p>
-                <div class="icon">
-                    <a href="#"><i class="fas fa-clock"></i>November 1, 2024</a>
-                    <a href="#"><i class="fas fa-user"></i>by admin</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="box breakfast">
-            <div class="image">
-                <img src="images/diet/diet-9.jpg" alt="">
-            </div>
-            <div class="content">
-                <a href="#" class="link">Lorem ipsum dolor sit amet consectetur</a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id ut voluptatibus aperiam velit, quos perferendis laborum deleniti natus.</p>
-                <div class="icon">
-                    <a href="#"><i class="fas fa-clock"></i>November 1, 2024</a>
-                    <a href="#"><i class="fas fa-user"></i>by admin</a>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="box breakfast">
-            <div class="image">
-                <img src="images/diet/diet-8.webp" alt="">
-            </div>
-            <div class="content">
-                <a href="#" class="link">Lorem ipsum dolor sit amet consectetur</a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id ut voluptatibus aperiam velit, quos perferendis laborum deleniti natus.</p>
-                <div class="icon">
-                    <a href="#"><i class="fas fa-clock"></i>November 1, 2024</a>
-                    <a href="#"><i class="fas fa-user"></i>by admin</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="box lunch">
-            <div class="image">
-                <img src="images/diet/diet-5.jpg" alt="">
-            </div>
-            <div class="content">
-                <a href="#" class="link">Lorem ipsum dolor sit amet consectetur</a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id ut voluptatibus aperiam velit, quos perferendis laborum deleniti natus.</p>
-                <div class="icon">
-                    <a href="#"><i class="fas fa-clock"></i>November 1, 2024</a>
-                    <a href="#"><i class="fas fa-user"></i>by admin</a>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="box dinner">
-            <div class="image">
-                <img src="images/diet/diet-6.jpg" alt="">
-            </div>
-            <div class="content">
-                <a href="#" class="link">Lorem ipsum dolor sit amet consectetur</a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id ut voluptatibus aperiam velit, quos perferendis laborum deleniti natus.</p>
-                <div class="icon">
-                    <a href="#"><i class="fas fa-clock"></i>November 1, 2024</a>
-                    <a href="#"><i class="fas fa-user"></i>by admin</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="box dinner">
-            <div class="image">
-                <img src="images/diet/diet-7.jpg" alt="">
-            </div>
-            <div class="content">
-                <a href="#" class="link">Lorem ipsum dolor sit amet consectetur</a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id ut voluptatibus aperiam velit, quos perferendis laborum deleniti natus.</p>
-                <div class="icon">
-                    <a href="#"><i class="fas fa-clock"></i>November 1, 2024</a>
-                    <a href="#"><i class="fas fa-user"></i>by admin</a>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="box  dinner">
-            <div class="image">
-                <img src="images/diet/diet-2.jpg" alt="">
-            </div>
-            <div class="content">
-                <a href="#" class="link">Lorem ipsum dolor sit amet consectetur</a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id ut voluptatibus aperiam velit, quos perferendis laborum deleniti natus.</p>
-                <div class="icon">
-                    <a href="#"><i class="fas fa-clock"></i>November 1, 2024</a>
-                    <a href="#"><i class="fas fa-user"></i>by admin</a>
-                </div>
-            </div>
-        </div>
-
-    </div>
     </section>
 
+    <!-- Recipe Modal -->
     <div id="recipeModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Add New Recipe</h2>
-            <form id="recipeForm">
-                <label for="recipeName">Recipe Name:</label>
-                <input type="text" id="recipeName" name="recipeName" required>
-                
-                <label for="ingredients">Ingredients:</label>
-                <textarea id="ingredients" name="ingredients" rows="4" required></textarea>
-                
-                <label for="instructions">Instructions:</label>
-                <textarea id="instructions" name="instructions" rows="4" required></textarea>
-                
-                <button type="submit">Submit Recipe</button>
-            </form>
+
+            <!-- Search Bar Inside the Modal -->
+            <div class="search-container">
+                <input type="text" id="modalRecipeQuery" placeholder="Search for recipes..." class="search-bar">
+                <button onclick="modalSearchRecipe()" class="search-button"><i class="fas fa-search"></i> Search</button>
+            </div>
+
+            <!-- Search Results in the Modal -->
+            <div id="modalSearchResults" class="search-results"></div>
+
+            <!-- Hidden Form to Save Recipe -->
+<form id="saveRecipeForm" style="display: none;" onsubmit="saveRecipe(event)">
+    <label for="selectedRecipeName">Recipe Name:</label>
+    <input type="text" id="selectedRecipeName" name="recipeName" readonly>
+
+    <label for="selectedRecipeIngredients">Ingredients:</label>
+    <textarea id="selectedRecipeIngredients" name="ingredients" rows="4" readonly></textarea>
+
+    <label for="selectedRecipeInstructions">Instructions:</label>
+    <textarea id="selectedRecipeInstructions" name="instructions" rows="4" readonly></textarea>
+
+    <!-- Hidden input for the recipe link -->
+    <input type="hidden" id="selectedRecipeLink" name="link">
+
+    <button type="submit">Save Recipe</button>
+</form>
+
         </div>
     </div>
-    
-
-
-
-
-
 
     <script>
         var navLinks = document.getElementById("navLinks");
-        function showMenu(){
+        function showMenu() {
             navLinks.style.right = "0";
         }
-        function hideMenu(){
+        function hideMenu() {
             navLinks.style.right = "-200px";
         }
-        $(document).ready(function(){
-            $('.buttons').click(function(){
+
+        $(document).ready(function () {
+            $('.buttons').click(function () {
                 $(this).addClass('active').siblings().removeClass('active');
 
-                var filter =  $(this).attr('data-filter');
-                if(filter == 'all'){
+                var filter = $(this).attr('data-filter');
+                if (filter == 'all') {
                     $('.diet .box').show(400);
-                }
-                else{
-                    $('.diet .box').not('.'+filter).hide(200);
-                    $('.diet .box').filter('.'+filter).show(400);
+                } else {
+                    $('.diet .box').not('.' + filter).hide(200);
+                    $('.diet .box').filter('.' + filter).show(400);
                 }
             });
-            
-        });
-        $(document).ready(function(){
-    var modal = document.getElementById("recipeModal"); // Correct modal ID
-    var btn = document.querySelector(".add_new_button"); // Use class selector
-    var span = document.getElementsByClassName("close")[0];
 
-    btn.onclick = function() {
-        modal.style.display = "block";
-    }
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
+            var modal = document.getElementById("recipeModal");
+            var btn = document.querySelector(".add_new_button");
+            var span = document.getElementsByClassName("close")[0];
+
+            btn.onclick = function () {
+                modal.style.display = "block";
+            }
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        });
+
+        // Function to search recipes from API in modal
+async function modalSearchRecipe() {
+    const query = document.getElementById('modalRecipeQuery').value;
+    const modalSearchResults = document.getElementById('modalSearchResults');
+    modalSearchResults.innerHTML = '<p>Loading...</p>'; // Show loading message
+
+    try {
+        const response = await fetch(`/api/recipe/search?query=${query}`);
+        if (response.ok) {
+            const data = await response.json();
+            const results = data.results.slice(0, 5); // Display only the first 3 results
+
+            if (results.length > 0) {
+                modalSearchResults.innerHTML = results.map((recipe, index) => `
+                    <div class="search-result-item">
+                        <h3>${recipe.title}</h3>
+                        <img src="${recipe.image}" alt="${recipe.title}" class="recipe-image">
+                        <p><strong>Recipe Source:</strong> Loading...</p> <!-- Initially loading the source URL -->
+                        <button onclick="selectRecipe(${index}, ${recipe.id})" class="select-recipe-button"
+                                data-title="${recipe.title}" 
+                                data-ingredients="${recipe.ingredients || ''}" 
+                                data-url="${recipe.sourceUrl || ''}">
+                            Select
+                        </button>
+                    </div>
+                `).join('');
+
+                // Fetch detailed information for each recipe, including sourceUrl
+                results.forEach(async (recipe, index) => {
+                    const detailsResponse = await fetch(`/api/recipe/details/${recipe.id}`);
+                    if (detailsResponse.ok) {
+                        const detailsData = await detailsResponse.json();
+                        const sourceUrl = detailsData.sourceUrl || 'No source URL available.';
+                        const recipeElement = modalSearchResults.children[index];
+                        recipeElement.querySelector('p').innerHTML = `<strong>Recipe Source:</strong> <a href="${sourceUrl}" target="_blank">View Recipe</a>`;
+                    }
+                });
+            } else {
+                modalSearchResults.innerHTML = '<p>No recipes found.</p>';
+            }
+        } else {
+            modalSearchResults.innerHTML = '<p>Error fetching recipes.</p>';
         }
+    } catch (error) {
+        modalSearchResults.innerHTML = `<p>Error: ${error.message}</p>`;
     }
-});
+}
+
+
+
+
+// Function to handle recipe selection
+// Function to handle recipe selection
+function selectRecipe(index) {
+    const selectedRecipeButton = document.querySelectorAll('.select-recipe-button')[index];
+    const title = selectedRecipeButton.getAttribute('data-title');
+    const sourceUrl = selectedRecipeButton.getAttribute('data-url'); // Get source URL
+    const ingredients = selectedRecipeButton.getAttribute('data-ingredients');
+    const instructions = selectedRecipeButton.getAttribute('data-instructions');
+
+    // Debugging: log selected recipe data to ensure everything is set properly
+    console.log(`Selected Recipe: Title = ${title}, SourceUrl = ${sourceUrl}, Ingredients = ${ingredients}, Instructions = ${instructions}`);
+
+    // Display the save recipe form with the selected data
+    document.getElementById('saveRecipeForm').style.display = 'block';
+    document.getElementById('selectedRecipeName').value = title;
+    document.getElementById('selectedRecipeIngredients').value = ingredients;
+    document.getElementById('selectedRecipeInstructions').value = instructions;
+    document.getElementById('selectedRecipeLink').value = sourceUrl; // Set the source URL in the hidden input field
+
+    // Debugging: Verify that the source URL is correctly set
+    console.log(`Source URL set in form: ${document.getElementById('selectedRecipeLink').value}`);
+}
+
+
+// Function to save the recipe to the database
+async function saveRecipe(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    const recipeName = document.getElementById('selectedRecipeName').value;
+    const ingredients = document.getElementById('selectedRecipeIngredients').value;
+    const instructions = document.getElementById('selectedRecipeInstructions').value;
+    const link = document.getElementById('selectedRecipeLink').value; // Get the link from the form
+    const userId = '@Context.Session.GetInt32("UserId")';  // Get the logged-in user ID (replace with actual user logic)
+
+    // Debugging: Log the recipe data to ensure it’s correct
+    console.log('Saving Recipe:', { recipeName, ingredients, instructions, link, userId });
+
+    const recipeData = {
+        title: recipeName,
+        sourceUrl: link,  // Pass the link as sourceUrl
+        userId: userId
+    };
+
+    try {
+        const response = await fetch('/api/recipe/save', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(recipeData)
+        });
+
+        if (response.ok) {
+            alert('Recipe saved successfully!');
+            // Optionally, close the modal or update the UI
+            document.getElementById('recipeModal').style.display = 'none';
+        } else {
+            alert('Error saving recipe.');
+        }
+    } catch (error) {
+        console.error('Error saving recipe:', error);
+        alert('Error saving recipe.');
+    }
+}
+
+
+        
     </script>
 </body>
 </html>
