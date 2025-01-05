@@ -15,12 +15,6 @@ body {
     color: white;
 }
 
-/* Text selection styling for visibility */
-::selection {
-    background-color: #b3d4fc; /* Light blue selection background */
-    color: #000; /* Black text for contrast */
-}
-
 nav {
     display: flex;
     padding: 2% 6%;
@@ -151,17 +145,6 @@ nav .fa {
     box-sizing: border-box;
 }
 
-.form-row input::placeholder {
-    color: #ccc; /* Placeholder text visibility */
-}
-
-.form-row input:focus,
-.form-row select:focus {
-    outline: 2px solid #b3d4fc; /* Highlight input focus */
-    background: rgba(255, 255, 255, 0.3); /* Slightly lighter background on focus */
-    color: #000; /* Ensure text is visible */
-}
-
 button {
     background-color: #891810;
     border: none;
@@ -171,7 +154,6 @@ button {
     cursor: pointer;
     margin-top: 15px;
     font-size: 16px;
-    transition: background-color 0.3s ease;
 }
 
 button:hover {

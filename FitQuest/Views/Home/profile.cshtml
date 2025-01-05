@@ -11,6 +11,12 @@
     <title>User Profile</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        ::selection {
+            background: #b3d4fc; /* Background color of the selected text */
+            color: #000; /* Color of the selected text */
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -50,51 +56,48 @@
             </h2>
 
             <div class="info-box">
-                @{
-                    var userID = Context.Session.GetInt32("UserId");
-                    if (userID == null)
-                    {
-                        <h1>Log in to view or edit your information</h1>
-                    }
-                    else
-                    {
-                        <form method="post" action="/UserProfile/SaveProfile">
-                            <div class="form-row">
-                                <label>Age:</label>
-                                <input type="number" name="Age" min="0" required value="@Model?.Age" />
-                            </div>
-                            <div class="form-row">
-                                <label>Height (cm):</label>
-                                <input type="number" name="Height" min="0" required value="@Model?.Height" />
-                            </div>
-                            <div class="form-row">
-                                <label>Weight (kg):</label>
-                                <input type="number" name="Weight" min="0" required value="@Model?.Weight" />
-                            </div>
-                            <div class="form-row">
-                                <label>Goals:</label>
-                                <select name="Goals" required>
-                                    <option value="" @(Model?.Goals == null ? "selected" : "")>Select Goal</option>
-                                    <option value="lose weight" @(Model?.Goals == "lose weight" ? "selected" : "")>Lose Weight</option>
-                                    <option value="gain weight" @(Model?.Goals == "gain weight" ? "selected" : "")>Gain Weight</option>
-                                    <option value="maintain weight" @(Model?.Goals == "maintain weight" ? "selected" : "")>Maintain Weight</option>
-                                </select>
-                            </div>
-                            <div class="form-row">
-                                <label>Workout Frequency (days/week):</label>
-                                <input type="number" name="WorkoutFrequency" min="0" max="7" required value="@Model?.WorkoutFrequency" />
-                            </div>
-                            <div class="form-row">
-                                <label>Gender:</label>
-                                <select name="Gender" required>
-                                    <option value="" @(Model?.Gender == null ? "selected" : "")>Select Gender</option>
-                                    <option value="Male" @(Model?.Gender == "Male" ? "selected" : "")>Male</option>
-                                    <option value="Female" @(Model?.Gender == "Female" ? "selected" : "")>Female</option>
-                                </select>
-                            </div>
-                            <button type="submit">Save</button>
-                        </form>
-                    }
+                @if (Model != null)
+                {
+                    <form method="post" action="/UserProfile/SaveProfile">
+                        <div class="form-row">
+                            <label>Age:</label>
+                            <input type="number" name="Age" min="0" value="@Model.Age" required />
+                        </div>
+                        <div class="form-row">
+                            <label>Height (cm):</label>
+                            <input type="number" name="Height" min="0" value="@Model.Height" required />
+                        </div>
+                        <div class="form-row">
+                            <label>Weight (kg):</label>
+                            <input type="number" name="Weight" min="0" value="@Model.Weight" required />
+                        </div>
+                        <div class="form-row">
+                            <label>Goals:</label>
+                            <select name="Goals" required>
+                                <option value="" style="color: black;">Select Goal</option>
+                                <option value="lose weight" style="color: black;" @(Model.Goals == "lose weight" ? "selected" : "")>Lose Weight</option>
+                                <option value="gain weight" style="color: black;" @(Model.Goals == "gain weight" ? "selected" : "")>Gain Weight</option>
+                                <option value="maintain weight" style="color: black;" @(Model.Goals == "maintain weight" ? "selected" : "")>Maintain Weight</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <label>Workout Frequency (days/week):</label>
+                            <input type="number" name="WorkoutFrequency" min="0" max="7" value="@Model.WorkoutFrequency" required />
+                        </div>
+                        <div class="form-row">
+                            <label>Gender:</label>
+                            <select name="Gender" required>
+                                <option value="" style="color: black;">Select Gender</option>
+                                <option value="Male" style="color: black;" @(Model.Gender == "Male" ? "selected" : "")>Male</option>
+                                <option value="Female" style="color: black;" @(Model.Gender == "Female" ? "selected" : "")>Female</option>
+                            </select>
+                        </div>
+                        <button type="submit">Save</button>
+                    </form>
+                }
+                else
+                {
+                    <h1>Log in to get workout plans</h1>
                 }
             </div>
         </div>

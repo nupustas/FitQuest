@@ -7,63 +7,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="~/css/nutrition.css" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generate Nutrition Plan</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-        }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #333;
-            color: white;
-            text-align: center;
-            border-radius: 5px;
-        }
-        .button:hover {
-            background-color: #77aaff;
-        }
-        #dietPlanResult {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: white;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        .error-message {
-            color: red;
-            font-weight: bold;
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #ffe6e6;
-            border: 1px solid red;
-            border-radius: 5px;
-        }
-        .error-message .button {
-            background-color: #f44336;
-        }
-    </style>
+    <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@@fortawesome/fontawesome-free@6.6.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <header>
-        <div class="nav-links" id="navLinks">
+     <nav>
+            <a href="/home/index"> <img src="~/images/words_logo.png"> </a>
+            <div class="nav-links" id="navLinks">
                 <i class="fa fa-times" onclick="hideMenu()" ></i>
                 <ul>
                     <li><a href="/home/Index">HOME</a></li>
@@ -76,7 +33,7 @@
                         if (!string.IsNullOrEmpty(username))
                         {
                             <!-- Display the user's name if they are logged in -->
-                            <li><a href="/Home/Profile" class="user-button">@username</a></li>
+                            <li><a href="/Home/Profile" class="user-button">@username.ToUpper()</a></li>
                             <li><a href="/home/Logout">LOGOUT</a></li>
                         }
                         else
@@ -88,7 +45,8 @@
                     
                 </ul>
             </div>
-    </header>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
 
     <div class="container">
         <!-- Check if the user is logged in -->
@@ -104,15 +62,17 @@
         }
         else
         {
+           <div class="generate">
+    <h2>Click below to generate your personalized diet plan</h2>
+    <form method="post" action="/Home/GenerateNutritionPlan" onsubmit="hideGenerateDiv(event)">
+        <button type="submit" class="button">Generate Nutrition Plan</button>
+    </form>
+</div>
+
             <!-- If logged in, allow generating the nutrition plan -->
-            <h2>Click below to generate your personalized diet plan</h2>
+            
 
-            <!-- Button to trigger nutrition plan generation -->
-            <form method="post" action="/Home/GenerateNutritionPlan">
-                <button type="submit" class="button">Generate Nutrition Plan</button>
-            </form>
 
-            <!-- Show error message if there is any -->
             @if (ViewBag.ErrorMessage != null)
             {
                 <div class="error-message">
@@ -133,12 +93,39 @@
             }
 
             <!-- If no diet plan generated, prompt user to update profile -->
-            @if (Model == null || string.IsNullOrEmpty(Model.DietPlan))
+            @* @if (Model == null || string.IsNullOrEmpty(Model.DietPlan))
             {
-                <p>Please update your profile information to generate a nutrition plan.</p>
-            }
+                <h2>Please update your profile information to generate a nutrition plan.</h2>
+            } *@
         }
     </div>
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+         function hideGenerateDiv(event) {
+        // Prevent default submission temporarily
+        event.preventDefault();
+
+        // Find the generate div
+        const generateDiv = document.querySelector('.generate');
+
+        if (generateDiv) {
+            // Add the hidden class to fade out and hide the div
+            generateDiv.classList.add('hidden');
+        }
+
+        // Wait for the fade-out animation before submitting the form
+        setTimeout(() => {
+            event.target.submit(); // Submit the form
+        }, 300); // Match the CSS transition duration
+    }
+    }
+    </script>
 
 </body>
 </html>

@@ -92,3 +92,18 @@ button:hover{
 #chk:checked ~ .signup label{
 	transform: scale(.6);
 }
+.reset-password-link{
+	display: block; 
+    margin: 10px auto; 
+    text-align: center; 
+    color: #891810;
+    font-size: 0.9em;
+    font-weight: 500; 
+    text-decoration: none; 
+	
+	
+
+}
+.reset-password-link:hover {
+    text-decoration: underline; 
+}

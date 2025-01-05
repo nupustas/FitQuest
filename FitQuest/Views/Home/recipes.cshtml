@@ -5,35 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="~/css/recipes_style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@@fortawesome/fontawesome-free@6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <title>Recipes</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<title>Recipes</title>
 </head>
 <header>
     <nav>
         <a href="index.html"> <img src="~/images/words_logo.png"> </a>
         <div class="nav-links" id="navLinks">
-            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <i class="fa fa-times" onclick="hideMenu()" ></i>
             <ul>
                 <li><a href="/home/index">HOME</a></li>
                 <li><a href="/home/fitness">FITNESS</a></li>
                 <li><a href="/home/nutrition">NUTRITION</a></li>
                 <li><a href="/home/recipes">RECIPES</a></li>
                 @{
-                    var username = Context.Session.GetString("Username")?.ToUpper();
-                    if (!string.IsNullOrEmpty(username))
-                    {
-                        <!-- Display the user's name if they are logged in -->
-                        <li><a href="/Home/Profile" class="user-button">@username</a></li>
-                        <li><a href="/home/Logout">LOGOUT</a></li>
+                        var username = Context.Session.GetString("Username");
+                        if (!string.IsNullOrEmpty(username))
+                        {
+                            <!-- Display the user's name if they are logged in -->
+                            <li><a href="/Home/Profile" class="user-button">@username.ToUpper()</a></li>
+                            <li><a href="/home/Logout">LOGOUT</a></li>
+                        }
+                        else
+                        {
+                            <!-- Show "Sign In / Sign Up" if the user is not logged in -->
+                            <li><a href="/home/Login" class="user-button">SIGN IN / SIGN UP</a></li>
+                        }
                     }
-                    else
-                    {
-                        <!-- Show "Sign In / Sign Up" if the user is not logged in -->
-                        <li><a href="/home/Login" class="user-button">SIGN IN / SIGN UP</a></li>
-                    }
-                }
             </ul>
         </div>
         <i class="fa fa-bars" onclick="showMenu()"></i>
@@ -62,122 +62,129 @@
             </li>
         </ul>
         <div class="add_new">
-            <button class="add_new_button"><i class="bi bi-plus-circle"></i>Add new recipe</button>
+            <button class="add_new_button" ><i class="bi bi-plus-circle"></i>Add new recipe</button>
         </div>
 
-        <div class="image-container">
-            <div class="box lunch">
-                <div class="image">
-                    <img src="images/diet/diet-1.jpeg" alt="">
-                </div>
-                <div class="content">
-                    <a href="#" class="link">Lorem ipsum dolor sit amet consectetur</a>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id ut voluptatibus aperiam velit, quos perferendis laborum deleniti natus.</p>
-                    <div class="icon">
-                        <a href="#"><i class="fas fa-clock"></i>November 1, 2024</a>
-                        <a href="#"><i class="fas fa-user"></i>by admin</a>
-                    </div>
-                </div>
-            </div>
 
-            <div class="box breakfast">
-                <div class="image">
-                    <img src="images/diet/diet-10.jpg" alt="">
-                </div>
-                <div class="content">
-                    <a href="#" class="link">Lorem ipsum dolor sit amet consectetur</a>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id ut voluptatibus aperiam velit, quos perferendis laborum deleniti natus.</p>
-                    <div class="icon">
-                        <a href="#"><i class="fas fa-clock"></i>November 1, 2024</a>
-                        <a href="#"><i class="fas fa-user"></i>by admin</a>
-                    </div>
-                </div>
-            </div>
+    <div class="image-container">
 
-            <div class="box breakfast">
-                <div class="image">
-                    <img src="images/diet/diet-9.jpg" alt="">
-                </div>
-                <div class="content">
-                    <a href="#" class="link">Lorem ipsum dolor sit amet consectetur</a>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id ut voluptatibus aperiam velit, quos perferendis laborum deleniti natus.</p>
-                    <div class="icon">
-                        <a href="#"><i class="fas fa-clock"></i>November 1, 2024</a>
-                        <a href="#"><i class="fas fa-user"></i>by admin</a>
-                    </div>
-                </div>
+        <div class="box lunch">
+            <div class="image">
+                <img src="images/diet/diet-1.jpeg" alt="">
             </div>
-
-            <div class="box breakfast">
-                <div class="image">
-                    <img src="images/diet/diet-8.webp" alt="">
-                </div>
-                <div class="content">
-                    <a href="#" class="link">Lorem ipsum dolor sit amet consectetur</a>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id ut voluptatibus aperiam velit, quos perferendis laborum deleniti natus.</p>
-                    <div class="icon">
-                        <a href="#"><i class="fas fa-clock"></i>November 1, 2024</a>
-                        <a href="#"><i class="fas fa-user"></i>by admin</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="box lunch">
-                <div class="image">
-                    <img src="images/diet/diet-5.jpg" alt="">
-                </div>
-                <div class="content">
-                    <a href="#" class="link">Lorem ipsum dolor sit amet consectetur</a>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id ut voluptatibus aperiam velit, quos perferendis laborum deleniti natus.</p>
-                    <div class="icon">
-                        <a href="#"><i class="fas fa-clock"></i>November 1, 2024</a>
-                        <a href="#"><i class="fas fa-user"></i>by admin</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="box dinner">
-                <div class="image">
-                    <img src="images/diet/diet-6.jpg" alt="">
-                </div>
-                <div class="content">
-                    <a href="#" class="link">Lorem ipsum dolor sit amet consectetur</a>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id ut voluptatibus aperiam velit, quos perferendis laborum deleniti natus.</p>
-                    <div class="icon">
-                        <a href="#"><i class="fas fa-clock"></i>November 1, 2024</a>
-                        <a href="#"><i class="fas fa-user"></i>by admin</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="box dinner">
-                <div class="image">
-                    <img src="images/diet/diet-7.jpg" alt="">
-                </div>
-                <div class="content">
-                    <a href="#" class="link">Lorem ipsum dolor sit amet consectetur</a>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id ut voluptatibus aperiam velit, quos perferendis laborum deleniti natus.</p>
-                    <div class="icon">
-                        <a href="#"><i class="fas fa-clock"></i>November 1, 2024</a>
-                        <a href="#"><i class="fas fa-user"></i>by admin</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="box dinner">
-                <div class="image">
-                    <img src="images/diet/diet-2.jpg" alt="">
-                </div>
-                <div class="content">
-                    <a href="#" class="link">Lorem ipsum dolor sit amet consectetur</a>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id ut voluptatibus aperiam velit, quos perferendis laborum deleniti natus.</p>
-                    <div class="icon">
-                        <a href="#"><i class="fas fa-clock"></i>November 1, 2024</a>
-                        <a href="#"><i class="fas fa-user"></i>by admin</a>
-                    </div>
+            <div class="content">
+                <a href="#" class="link">Lorem ipsum dolor sit amet consectetur</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id ut voluptatibus aperiam velit, quos perferendis laborum deleniti natus.</p>
+                <div class="icon">
+                    <a href="#"><i class="fas fa-clock"></i>November 1, 2024</a>
+                    <a href="#"><i class="fas fa-user"></i>by admin</a>
                 </div>
             </div>
         </div>
+
+
+        <div class="box breakfast">
+            <div class="image">
+                <img src="images/diet/diet-10.jpg" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="link">Lorem ipsum dolor sit amet consectetur</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id ut voluptatibus aperiam velit, quos perferendis laborum deleniti natus.</p>
+                <div class="icon">
+                    <a href="#"><i class="fas fa-clock"></i>November 1, 2024</a>
+                    <a href="#"><i class="fas fa-user"></i>by admin</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="box breakfast">
+            <div class="image">
+                <img src="images/diet/diet-9.jpg" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="link">Lorem ipsum dolor sit amet consectetur</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id ut voluptatibus aperiam velit, quos perferendis laborum deleniti natus.</p>
+                <div class="icon">
+                    <a href="#"><i class="fas fa-clock"></i>November 1, 2024</a>
+                    <a href="#"><i class="fas fa-user"></i>by admin</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="box breakfast">
+            <div class="image">
+                <img src="images/diet/diet-8.webp" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="link">Lorem ipsum dolor sit amet consectetur</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id ut voluptatibus aperiam velit, quos perferendis laborum deleniti natus.</p>
+                <div class="icon">
+                    <a href="#"><i class="fas fa-clock"></i>November 1, 2024</a>
+                    <a href="#"><i class="fas fa-user"></i>by admin</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="box lunch">
+            <div class="image">
+                <img src="images/diet/diet-5.jpg" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="link">Lorem ipsum dolor sit amet consectetur</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id ut voluptatibus aperiam velit, quos perferendis laborum deleniti natus.</p>
+                <div class="icon">
+                    <a href="#"><i class="fas fa-clock"></i>November 1, 2024</a>
+                    <a href="#"><i class="fas fa-user"></i>by admin</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="box dinner">
+            <div class="image">
+                <img src="images/diet/diet-6.jpg" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="link">Lorem ipsum dolor sit amet consectetur</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id ut voluptatibus aperiam velit, quos perferendis laborum deleniti natus.</p>
+                <div class="icon">
+                    <a href="#"><i class="fas fa-clock"></i>November 1, 2024</a>
+                    <a href="#"><i class="fas fa-user"></i>by admin</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="box dinner">
+            <div class="image">
+                <img src="images/diet/diet-7.jpg" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="link">Lorem ipsum dolor sit amet consectetur</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id ut voluptatibus aperiam velit, quos perferendis laborum deleniti natus.</p>
+                <div class="icon">
+                    <a href="#"><i class="fas fa-clock"></i>November 1, 2024</a>
+                    <a href="#"><i class="fas fa-user"></i>by admin</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="box  dinner">
+            <div class="image">
+                <img src="images/diet/diet-2.jpg" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="link">Lorem ipsum dolor sit amet consectetur</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id ut voluptatibus aperiam velit, quos perferendis laborum deleniti natus.</p>
+                <div class="icon">
+                    <a href="#"><i class="fas fa-clock"></i>November 1, 2024</a>
+                    <a href="#"><i class="fas fa-user"></i>by admin</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
     </section>
 
     <div id="recipeModal" class="modal">
@@ -198,6 +205,12 @@
             </form>
         </div>
     </div>
+    
+
+
+
+
+
 
     <script>
         var navLinks = document.getElementById("navLinks");
@@ -220,24 +233,25 @@
                     $('.diet .box').filter('.'+filter).show(400);
                 }
             });
+            
         });
         $(document).ready(function(){
-            var modal = document.getElementById("recipeModal"); // Correct modal ID
-            var btn = document.querySelector(".add_new_button"); // Use class selector
-            var span = document.getElementsByClassName("close")[0];
+    var modal = document.getElementById("recipeModal"); // Correct modal ID
+    var btn = document.querySelector(".add_new_button"); // Use class selector
+    var span = document.getElementsByClassName("close")[0];
 
-            btn.onclick = function() {
-                modal.style.display = "block";
-            }
-            span.onclick = function() {
-                modal.style.display = "none";
-            }
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            }
-        });
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+});
     </script>
 </body>
 </html>

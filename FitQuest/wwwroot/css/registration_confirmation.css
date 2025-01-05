@@ -1,0 +1,62 @@
+body{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	font-family: 'Jost', sans-serif;
+	background-image: url("../images/login_back.jpg");
+    background-size: cover; 
+  background-position: center; 
+  position: relative;
+  background-repeat: no-repeat; 
+}
+.card{
+    position: relative; 
+  max-width: 90vw; 
+  max-height: 90vh; 
+  margin: auto; 
+  padding: 20px; 
+  background-color: rgba(255, 255, 255);
+  border-radius: 8px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+  flex-direction: column; 
+    gap: 10px; 
+
+}
+h2{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+    color: black;
+}
+p{
+    text-align: center;
+    font-weight: 400;
+    margin: 10px 0;
+    color: black;
+}
+.login-button {
+    width: 60%; 
+    height: 40px; 
+    margin: 10px auto; 
+    display: block; 
+    text-align: center; 
+    line-height: 40px; 
+    color: #fff; 
+    background: #891810; 
+    font-size: 1em; 
+    font-weight: bold; 
+    margin-top: 10px; 
+    outline: none; 
+    border: none; 
+    border-radius: 5px;
+    text-decoration: none; 
+    transition: background-color 0.2s ease-in; 
+    cursor: pointer; 
+}
+
+.login-button:hover {
+    background-color: #61100a; 
+}
