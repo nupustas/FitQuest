@@ -1298,7 +1298,6 @@ C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\M
 C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
-C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\MimeKit.dll
 C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\Mono.TextTemplating.dll
 C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\MySqlConnector.dll
@@ -1313,7 +1312,6 @@ C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\S
 C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\System.Composition.Runtime.dll
 C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\System.Composition.TypedParts.dll
 C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
-C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\System.Drawing.Common.dll
 C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\System.Memory.Data.dll
 C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\System.Runtime.Caching.dll
@@ -1378,12 +1376,7 @@ C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\r
 C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
-C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
-C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
-C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\obj\Debug\net8.0\FitQuest.csproj.AssemblyReference.cache
 C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\obj\Debug\net8.0\FitQuest.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\obj\Debug\net8.0\FitQuest.AssemblyInfoInputs.cache
@@ -1727,3 +1720,16 @@ C:\Users\vejas\OneDrive\Desktop\FitQuest-2\FitQuest\bin\Debug\net8.0\runtimes\wi
 C:\Users\vejas\OneDrive\Desktop\FitQuest-2\FitQuest\bin\Debug\net8.0\runtimes\win-x64\native\krb5_64.dll
 C:\Users\vejas\OneDrive\Desktop\FitQuest-2\FitQuest\bin\Debug\net8.0\runtimes\win-x64\native\krbcc64.dll
 C:\Users\vejas\OneDrive\Desktop\FitQuest-2\FitQuest\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Windows.Extensions.dll
+C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\Dapper.dll
+C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\Google.Protobuf.dll
+C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\K4os.Compression.LZ4.dll
+C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\K4os.Compression.LZ4.Streams.dll
+C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\K4os.Hash.xxHash.dll
+C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\MySql.Data.dll
+C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\ZstdSharp.dll
+C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\runtimes\win-x64\native\comerr64.dll
+C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\runtimes\win-x64\native\gssapi64.dll
+C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\runtimes\win-x64\native\k5sprt64.dll
+C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\runtimes\win-x64\native\krb5_64.dll
+C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\runtimes\win-x64\native\krbcc64.dll
+C:\Users\petru\Desktop\VU\Komparkas\Project\FitQuest\FitQuest\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Windows.Extensions.dll

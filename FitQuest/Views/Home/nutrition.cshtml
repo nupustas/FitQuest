@@ -84,7 +84,7 @@
             {
                 <div id="dietPlanResult">
                     <h3>Your Nutrition Plan</h3>
-                    @Html.Raw(Model.DietPlan.Replace("week.", ""))
+                    @Html.Raw(System.Text.RegularExpressions.Regex.Replace(Model.DietPlan.Replace("week.", ""), @"\b(monday|tuesday|wednesday|thursday|friday|saturday|sunday)\b", match => match.Value.Substring(0, 1).ToUpper() + match.Value.Substring(1)))
                 </div>
             }
 

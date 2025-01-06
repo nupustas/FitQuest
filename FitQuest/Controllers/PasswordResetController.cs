@@ -83,11 +83,16 @@ namespace FitQuest.Controllers
 
         // POST: Handle Password Reset
         [HttpPost("ResetPassword")]
-        public async Task<IActionResult> ResetPassword([FromForm] string token, [FromForm] string newPassword)
+        public async Task<IActionResult> ResetPassword([FromForm] string token, [FromForm] string newPassword, [FromForm] string confirmPassword)
         {
-            if (string.IsNullOrEmpty(token) || string.IsNullOrEmpty(newPassword))
+            if (string.IsNullOrEmpty(token) || string.IsNullOrEmpty(newPassword) || string.IsNullOrEmpty(confirmPassword))
             {
-                return BadRequest(new { error = "Token and new password are required." });
+                return BadRequest(new { error = "Token, new password, and confirm password are required." });
+            }
+
+            if (newPassword != confirmPassword)
+            {
+                return BadRequest(new { error = "Passwords do not match." });
             }
 
             var passwordResetToken = _context.PasswordResetTokens
